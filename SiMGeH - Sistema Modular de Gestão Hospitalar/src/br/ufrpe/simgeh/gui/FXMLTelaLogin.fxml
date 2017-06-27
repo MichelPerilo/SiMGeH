@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.ufrpe.simgeh.gui.FXMLTelaLoginController">
+  <children>
+    <MenuBar minWidth="1360.0" prefWidth="1360.0" VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Pane layoutX="7.0" layoutY="5.0" prefHeight="633.0" prefWidth="1354.0">
+               <children>
+                  <Pane layoutX="542.0" layoutY="356.0" prefHeight="209.0" prefWidth="244.0">
+                     <children>
+                    <Label fx:id="lbl_login" alignment="CENTER" layoutX="14.0" layoutY="27.0" style="&#10;" text="Login" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+                      <font>
+                        <Font size="18.0" />
+                      </font>
+                    </Label>
+                        <Button layoutX="160.0" layoutY="178.0" mnemonicParsing="false" text="Entrar">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="22.0" layoutY="104.0" text="Usuário:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="24.0" layoutY="144.0" text="Senha:">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="89.0" layoutY="103.0" prefHeight="27.0" prefWidth="138.0" />
+                        <PasswordField layoutX="89.0" layoutY="142.0" prefHeight="27.0" prefWidth="138.0" />
+                        <ChoiceBox fx:id="chbox_modulo" layoutX="90.0" layoutY="67.0" prefHeight="25.0" prefWidth="138.0" />
+                        <Label layoutX="26.0" layoutY="68.0" text="Setor:">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Label>
+                        <Separator layoutX="24.0" layoutY="1.0" prefWidth="200.0" />
+                     </children>
+                  </Pane>
+                  <ImageView fitHeight="160.0" fitWidth="701.0" layoutX="323.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@qms_v2_rgb.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="63.0" fitWidth="425.0" layoutX="1034.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@dmv_logo.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Pane>
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
