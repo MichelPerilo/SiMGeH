@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
+import javafx.scene.control.MenuItem;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -38,6 +39,8 @@ public class Vbox_LogonController implements Initializable {
     @FXML
     private Menu menu_agendamento; 
     @FXML
+    private MenuItem menuitem_novoagedamento;
+    @FXML
     private Menu menu_administracao;
     @FXML
     private Menu menu_help;
@@ -54,6 +57,11 @@ public class Vbox_LogonController implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
+    }
+    
+    public void handlerNovoAgendamento() throws IOException{
+        AnchorPane anchorpane_novoagendamento = (AnchorPane) FXMLLoader.load(getClass().getResource("/br/simgeh/gui/AnchorPane_NovoAgendamento.fxml"));
+        anchorpane_main.getChildren().setAll(anchorpane_novoagendamento);
     }
     
     public void handlerInicio() throws IOException{

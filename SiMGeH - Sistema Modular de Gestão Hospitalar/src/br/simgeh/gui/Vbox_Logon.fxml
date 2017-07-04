@@ -15,7 +15,7 @@
         <menus>
           <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Agendamento" visible="false">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Agendamento" />
             </items>
           </Menu>
           <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Administraçao" visible="false">
