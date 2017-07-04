@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="695.0" minWidth="1200.0" prefHeight="695.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_IniciarController">
+   <children>
+      <ImageView fitHeight="195.0" fitWidth="275.0" layoutX="508.0" layoutY="245.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@qms_v2_h_rgb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
