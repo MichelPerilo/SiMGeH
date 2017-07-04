@@ -60,7 +60,7 @@ public class Vbox_LogonController implements Initializable {
     }
     
     public void handlerNovoAgendamento() throws IOException{
-        AnchorPane anchorpane_novoagendamento = (AnchorPane) FXMLLoader.load(getClass().getResource("/br/simgeh/gui/AnchorPane_NovoAgendamento.fxml"));
+        AnchorPane anchorpane_novoagendamento = (AnchorPane) FXMLLoader.load(getClass().getResource("/br/simgeh/gui/AnchorPane_NovoPaciente.fxml"));
         anchorpane_main.getChildren().setAll(anchorpane_novoagendamento);
     }
     

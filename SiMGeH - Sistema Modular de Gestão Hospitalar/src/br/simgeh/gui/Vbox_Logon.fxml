@@ -13,9 +13,12 @@
    <children>
       <MenuBar minHeight="25.0" minWidth="1200.0" prefHeight="25.0" prefWidth="1200.0">
         <menus>
-          <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Agendamento" visible="false">
+          <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Recepção" visible="false">
             <items>
-              <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Agendamento" />
+              <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Paciente" />
+                  <MenuItem mnemonicParsing="false" text="Buscar Paciente" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" text="Agenda" />
             </items>
           </Menu>
           <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Administraçao" visible="false">
