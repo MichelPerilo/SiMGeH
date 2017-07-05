@@ -26,11 +26,7 @@
               <MenuItem mnemonicParsing="false" text="Delete" />
             </items>
           </Menu>
-          <Menu fx:id="menu_help" mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
+          <Menu fx:id="menu_help" mnemonicParsing="false" text="Help" />
             <Menu fx:id="menu_clinica" mnemonicParsing="false" text="Clínica" visible="false">
               <items>
                 <MenuItem mnemonicParsing="false" text="Action 1" />
@@ -46,11 +42,10 @@
                 <MenuItem mnemonicParsing="false" text="Action 1" />
               </items>
             </Menu>
-            <Menu fx:id="menu_sair" mnemonicParsing="false" text="Sair" visible="false">
-              <items>
-                <MenuItem mnemonicParsing="false" text="Action 1" />
-              </items>
-            </Menu>
+            <Menu fx:id="menu_sair" mnemonicParsing="false" onAction="#handlerSair" text="Sair" visible="false">
+               <items>
+                  <MenuItem fx:id="menuitem_sair" mnemonicParsing="false" onAction="#handlerSair" text="Sair" />
+               </items></Menu>
         </menus>
       </MenuBar>
       <AnchorPane fx:id="anchorpane_main" prefHeight="695.0" prefWidth="1200.0">

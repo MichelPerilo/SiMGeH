@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="153.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_DialogSairController">
+   <children>
+      <Label layoutX="128.0" layoutY="44.0" prefHeight="20.0" prefWidth="158.0" text="Deseja mesmo sair?">
+         <font>
+            <Font name="Arial" size="16.0" />
+         </font>
+      </Label>
+      <Button fx:id="btn_dialogsair_sim" layoutX="209.0" layoutY="94.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="77.0" text="Sim">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <Button fx:id="btn_dialogsair_cancelar" layoutX="118.0" layoutY="94.0" mnemonicParsing="false" onAction="#handlerButtonCancelar" prefHeight="30.0" prefWidth="77.0" text="Cancelar">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+      <ImageView fitHeight="100.0" fitWidth="94.0" layoutX="12.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@interrogacao_rgb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
