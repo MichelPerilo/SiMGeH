@@ -14,7 +14,7 @@ import javafx.fxml.Initializable;
  *
  * @author miche
  */
-public class AnchorPane_NovoAgendamentoController implements Initializable {
+public class AnchorPane_NovoPacienteController implements Initializable {
 
     /**
      * Initializes the controller class.
