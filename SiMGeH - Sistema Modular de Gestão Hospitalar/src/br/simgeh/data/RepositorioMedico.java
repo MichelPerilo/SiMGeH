@@ -25,7 +25,7 @@ public class RepositorioMedico implements IRepositorioMedico{
     }
 
     @Override
-    public boolean atualizarCDMedico(Medico medico, int MATRICULA) {
+    public boolean atualizarCDMedico(Medico medico) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -38,5 +38,5 @@ public class RepositorioMedico implements IRepositorioMedico{
     public List<Medico> listarMedicos() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-    
+
 }

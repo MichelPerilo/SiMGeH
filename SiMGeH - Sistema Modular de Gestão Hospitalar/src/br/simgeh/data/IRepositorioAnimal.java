@@ -5,25 +5,25 @@
  */
 package br.simgeh.data;
 
-import br.simgeh.model.Medico;
+import br.simgeh.model.Animal;
 import java.util.List;
 
 /**
  *
  * @author Bartô
  */
-public interface IRepositorioMedico {
-    public boolean cadastrarMedico(Medico medico);
+public interface IRepositorioAnimal {
+    public boolean cadastrarAnimal(Animal animal);
     
     public void buscarMedico(int crmv, int MATRICULA, String CPF);
     
    /**
     *
-    * @param medico: recebe uma instância de médico atualizada(com os novos dados).
+    * @param animal: recebe uma instância de cadastro de animal atualizada(com os novos dados)
     */ 
-    public boolean atualizarCDMedico(Medico medico);
+    public boolean atualizarCDAnimal(Animal animal);
     
-    public boolean removerMedico(Medico medico);
+    public boolean removerCDAnimal(Animal animal);
     
-    public List<Medico> listarMedicos();
+    public List<Animal> listarAnimal();
 }
