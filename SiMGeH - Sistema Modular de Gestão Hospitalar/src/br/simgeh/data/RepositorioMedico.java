@@ -9,6 +9,7 @@ import br.simgeh.db_conection.ConexaoMySQL;
 import br.simgeh.model.Medico;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.util.List;
 
 /**
@@ -37,6 +38,8 @@ public class RepositorioMedico implements IRepositorioMedico {
         } catch (SQLException u) {
             throw new RuntimeException(u);
         }
+        
+        return true;
     }
 
     @Override

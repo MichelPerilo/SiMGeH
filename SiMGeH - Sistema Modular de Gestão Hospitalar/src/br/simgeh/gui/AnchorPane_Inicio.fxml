@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_InicioController">
+   <children>
+      <VBox prefHeight="720.0" prefWidth="1200.0">
+         <children>
+            <MenuBar minHeight="25.0" minWidth="1200.0" prefHeight="25.0" prefWidth="1200.0">
+              <menus>
+                <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Recepção" visible="false">
+                  <items>
+                    <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Paciente" />
+                        <MenuItem mnemonicParsing="false" text="Buscar Paciente" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" text="Agenda" />
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Administraçao" visible="false">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menu_clinica" mnemonicParsing="false" text="Clínica" visible="false">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_farmacia" mnemonicParsing="false" text="Farmácia" visible="false">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_laboratorio" mnemonicParsing="false" text="Laboratório" visible="false">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_sair" mnemonicParsing="false" onAction="#handlerSair" text="Sair" visible="false">
+                     <items>
+                        <MenuItem fx:id="menuitem_sair" mnemonicParsing="false" onAction="#handlerSair" text="Sair" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <AnchorPane fx:id="anchorpane_main" prefHeight="695.0" prefWidth="1200.0" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

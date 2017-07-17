@@ -35,7 +35,7 @@ public class ConexaoMySQL {
     }
 
 //Método de Conexão//
-    private static java.sql.Connection getConexaoMySQL() {
+    public static java.sql.Connection getConexaoMySQL() {
 
         Connection connection = null;          //atributo do tipo Connection
 
