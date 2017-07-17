@@ -5,18 +5,38 @@
  */
 package br.simgeh.data;
 
+import br.simgeh.db_conection.ConexaoMySQL;
 import br.simgeh.model.Medico;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.List;
 
 /**
  *
  * @author Bartô
  */
-public class RepositorioMedico implements IRepositorioMedico{
-
+public class RepositorioMedico implements IRepositorioMedico {
+    
+    private Connection connection;  
+    
+    public RepositorioMedico(){  
+        this.connection = ConexaoMySQL.getConexaoMySQL();
+    }  
+    
     @Override
     public boolean cadastrarMedico(Medico medico) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "INSERT INTO medico(nome,cpf,email,telefone) VALUES(?,?,?,?)";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(sql);
+            stmt.setString(1, medico.getNome());
+            stmt.setString(2, medico.getCpf());
+            stmt.setString(3, medico.getEmail());
+            stmt.setString(4, medico.getTelefone());
+            stmt.execute();
+            stmt.close();
+        } catch (SQLException u) {
+            throw new RuntimeException(u);
+        }
     }
 
     @Override

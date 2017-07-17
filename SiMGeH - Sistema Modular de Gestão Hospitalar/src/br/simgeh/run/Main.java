@@ -6,13 +6,10 @@
 package br.simgeh.run;
 
 import javafx.application.Application;
-import static javafx.application.Application.launch;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import static javafx.application.Application.launch;
-import static javafx.application.Application.launch;
 import static javafx.application.Application.launch;
 import javafx.scene.image.Image;
 
@@ -28,7 +25,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         window = stage;
         window.setTitle("SiMGeH");
-        Parent root = FXMLLoader.load(getClass().getResource("gui/Vbox_Logon.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../gui/Vbox_Logon.fxml"));
         
         Scene scene = new Scene(root);
         

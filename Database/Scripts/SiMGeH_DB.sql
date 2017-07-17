@@ -29,3 +29,5 @@ CREATE TABLE medico (
   foreign key(MATRICULA) references usuario(MATRICULA)
 );
 
+CREATE TABLE animal(
+  

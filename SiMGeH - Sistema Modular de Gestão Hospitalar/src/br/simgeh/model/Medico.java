@@ -12,9 +12,12 @@ import java.util.Date;
  * @author BARTOLOMEU.DIAS
  */
 public class Medico extends Usuario {
+    
+    private String MATRICULA;
     private String Especialidade;
     private int crmv;
-
+    
+    
     public Medico(String Especialidade, int crmv, int MATRICULA, String login, String senha, Boolean admin, String pNome, String uNome, String CPF, Date dta_nascto, int tel_fixo, int tel_celular) {
         super(MATRICULA, login, senha, admin, pNome, uNome, CPF, dta_nascto, tel_fixo, tel_celular);
         this.Especialidade = Especialidade;
