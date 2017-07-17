@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `simgeh` /*!40100 DEFAULT CHARACTER SET utf8 */;
+USE `simgeh`;
 -- MySQL dump 10.13  Distrib 5.7.12, for Win32 (AMD64)
 --
 -- Host: 127.0.0.1    Database: simgeh
@@ -16,33 +18,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `usuario`
+-- Table structure for table `medico`
 --
 
-DROP TABLE IF EXISTS `usuario`;
+DROP TABLE IF EXISTS `medico`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `usuario` (
+CREATE TABLE `medico` (
   `MATRICULA` int(12) NOT NULL,
-  `CPF` varchar(11) NOT NULL,
-  `admin` tinyint(1) DEFAULT NULL,
-  `login` varchar(50) NOT NULL,
-  `senha` varchar(8) NOT NULL,
-  PRIMARY KEY (`MATRICULA`),
-  UNIQUE KEY `CPF` (`CPF`),
-  UNIQUE KEY `login` (`login`),
-  UNIQUE KEY `senha` (`senha`),
-  CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`CPF`) REFERENCES `pessoa` (`CPF`)
+  `pNome` varchar(15) NOT NULL,
+  `uNome` varchar(20) NOT NULL,
+  `crmv` int(11) NOT NULL,
+  `especialidade` varchar(40) NOT NULL,
+  PRIMARY KEY (`crmv`),
+  KEY `MATRICULA` (`MATRICULA`),
+  CONSTRAINT `medico_ibfk_1` FOREIGN KEY (`MATRICULA`) REFERENCES `usuario` (`MATRICULA`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `usuario`
+-- Dumping data for table `medico`
 --
 
-LOCK TABLES `usuario` WRITE;
-/*!40000 ALTER TABLE `usuario` DISABLE KEYS */;
-/*!40000 ALTER TABLE `usuario` ENABLE KEYS */;
+LOCK TABLES `medico` WRITE;
+/*!40000 ALTER TABLE `medico` DISABLE KEYS */;
+/*!40000 ALTER TABLE `medico` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -54,4 +54,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-07-16 11:01:59
+-- Dump completed on 2017-07-17  1:52:41
