@@ -16,7 +16,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author miche
+ * @author Michel Perilo
  */
 public class AnchorPane_DialogSairController implements Initializable {
 

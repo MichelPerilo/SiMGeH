@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" prefHeight="153.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_DialogSairController">
+<AnchorPane id="AnchorPane" prefHeight="153.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_DialogSairController">
    <children>
       <Label layoutX="128.0" layoutY="44.0" prefHeight="20.0" prefWidth="158.0" text="Deseja mesmo sair?">
          <font>

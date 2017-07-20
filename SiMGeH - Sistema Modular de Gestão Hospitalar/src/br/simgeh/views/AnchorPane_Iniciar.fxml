@@ -7,7 +7,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane id="AnchorPane" minHeight="695.0" minWidth="1200.0" prefHeight="695.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_IniciarController">
+<AnchorPane id="AnchorPane" minHeight="695.0" minWidth="1200.0" prefHeight="695.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_IniciarController">
    <children>
       <ImageView fitHeight="130.0" fitWidth="140.0" layoutX="1045.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
          <image>

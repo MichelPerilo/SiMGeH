@@ -15,6 +15,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
@@ -38,27 +39,12 @@ public class Vbox_LogonController implements Initializable {
 
     
     
-    @FXML
-    private AnchorPane anchorpane_main; 
-    @FXML
-    private Menu menu_agendamento; 
-    @FXML
-    private MenuItem menuitem_novoagedamento;
-    @FXML
-    private Menu menu_administracao;
+  
     @FXML
     private Menu menu_help;
-    @FXML
-    private Menu menu_clinica;
-    @FXML
-    private Menu menu_farmacia;
-    @FXML
-    private Menu menu_laboratorio; 
-    @FXML
-    private Menu menu_sair;
-    @FXML
-    private MenuItem menuitem_sair;
 
+    @FXML
+    private Button btn_entrar;
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -93,13 +79,24 @@ public class Vbox_LogonController implements Initializable {
         
     }
     
-    public void handlerNovoAgendamento() throws IOException{
-      
-    }
-    
-    public void handlerInicio() throws IOException{
-      
+    public void showAnchorPane_Inicio() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AnchorPane_InicioController.class.getResource("../views/AnchorPane_Inicio.fxml"));
+        AnchorPane page = (AnchorPane) loader.load(); 
         
+        Stage stage = new Stage();
+        stage.setTitle("SiMGeH");
+        Scene scene = new Scene(page);
+        stage.setScene(scene);
+        stage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
+        stage.setResizable(false);
+        
+        AnchorPane_InicioController controller = loader.getController();
+        controller.setInicioStage(stage);
+        
+        Stage selfscene = (Stage) btn_entrar.getScene().getWindow();
+        selfscene.close();
+        
+        stage.showAndWait();
     }
-    
 }
