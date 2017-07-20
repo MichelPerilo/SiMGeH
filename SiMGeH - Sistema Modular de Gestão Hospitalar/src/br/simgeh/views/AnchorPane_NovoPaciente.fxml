@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" minHeight="695.0" minWidth="1200.0" prefHeight="695.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.controllers.AnchorPane_NovoPacienteController">
+   <children>
+      <AnchorPane layoutX="223.0" layoutY="96.0" prefHeight="441.0" prefWidth="755.0">
+         <children>
+            <Separator layoutX="68.0" layoutY="127.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
+            <Separator layoutX="687.0" layoutY="127.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
+            <Label layoutX="310.0" layoutY="12.0" prefHeight="48.0" prefWidth="135.0" text="Novo Paciente">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="78.0" layoutY="177.0" text="Espécie:" />
+            <ComboBox layoutX="77.0" layoutY="194.0" prefHeight="25.0" prefWidth="154.0" />
+            <Label layoutX="78.0" layoutY="127.0" text="Nome:" />
+            <TextField layoutX="78.0" layoutY="144.0" prefHeight="25.0" prefWidth="160.0" />
+            <Label layoutX="247.0" layoutY="177.0" text="Raça:" />
+            <TextField layoutX="78.0" layoutY="248.0" prefHeight="25.0" prefWidth="55.0" />
+            <Label layoutX="78.0" layoutY="230.0" text="Idade:" />
+            <Label layoutX="251.0" layoutY="127.0" text="Sexo:" />
+            <Label layoutX="151.0" layoutY="230.0" text="Pelagem:" />
+            <RadioButton layoutX="250.0" layoutY="144.0" mnemonicParsing="false" text="Macho" />
+            <RadioButton layoutX="315.0" layoutY="144.0" mnemonicParsing="false" text="Fêmea" />
+            <ComboBox layoutX="150.0" layoutY="248.0" prefHeight="25.0" prefWidth="97.0" />
+            <Separator layoutX="378.0" layoutY="127.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
+            <TextField layoutX="246.0" layoutY="194.0" prefHeight="25.0" prefWidth="126.0" />
+            <Label layoutX="74.0" layoutY="102.0" text="Dados do Animal">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="384.0" layoutY="102.0" text="Dados do Tutor">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ComboBox layoutX="264.0" layoutY="248.0" prefHeight="25.0" prefWidth="107.0" />
+            <Label layoutX="265.0" layoutY="230.0" text="Porte:" />
+            <TextField layoutX="387.0" layoutY="144.0" prefHeight="25.0" prefWidth="160.0" />
+            <Label layoutX="387.0" layoutY="127.0" text="Tutor(a):" />
+            <Label layoutX="561.0" layoutY="128.0" text="CPF:" />
+            <TextField layoutX="561.0" layoutY="144.0" prefHeight="25.0" prefWidth="119.0" />
+            <TextField layoutX="388.0" layoutY="248.0" prefHeight="25.0" prefWidth="88.0" />
+            <Label layoutX="389.0" layoutY="231.0" text="Fone:" />
+            <Label layoutX="483.0" layoutY="231.0" text="Logradouro:" />
+            <TextField layoutX="483.0" layoutY="248.0" prefHeight="25.0" prefWidth="148.0" />
+            <TextField layoutX="637.0" layoutY="248.0" prefHeight="25.0" prefWidth="45.0" />
+            <Label layoutX="638.0" layoutY="231.0" text="Nº:" />
+            <Label layoutX="388.0" layoutY="178.0" text="Cidade:" />
+            <ChoiceBox layoutX="387.0" layoutY="195.0" prefHeight="25.0" prefWidth="160.0" />
+            <ChoiceBox layoutX="561.0" layoutY="195.0" prefHeight="25.0" prefWidth="119.0" />
+            <Label layoutX="562.0" layoutY="178.0" text="Bairro:" />
+            <Button layoutX="382.0" layoutY="328.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" />
+            <Button layoutX="308.0" layoutY="328.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
+         </children>
+      </AnchorPane>
+      <ImageView fitHeight="130.0" fitWidth="140.0" layoutX="1045.0" layoutY="575.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@qms_v2_h_rgb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

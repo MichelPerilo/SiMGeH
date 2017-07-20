@@ -25,7 +25,7 @@ public class Main extends Application {
     public void start(Stage stage) throws Exception {
         window = stage;
         window.setTitle("SiMGeH");
-        Parent root = FXMLLoader.load(getClass().getResource("../gui/Vbox_Logon.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../views/Vbox_Logon.fxml"));
         
         Scene scene = new Scene(root);
         
