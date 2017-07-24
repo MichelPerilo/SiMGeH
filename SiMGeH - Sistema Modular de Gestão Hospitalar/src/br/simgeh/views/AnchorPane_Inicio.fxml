@@ -23,9 +23,9 @@
                         <MenuItem mnemonicParsing="false" text="Agenda" />
                   </items>
                 </Menu>
-                <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Administraçao" visible="false">
+                <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Gestão de Acesso" visible="false">
                   <items>
-                    <MenuItem mnemonicParsing="false" text="Delete" />
+                    <MenuItem fx:id="menuitem_novousuario" mnemonicParsing="false" onAction="#handlerNovoUsuario" text="Novo Usuário" />
                   </items>
                 </Menu>
                   <Menu fx:id="menu_clinica" mnemonicParsing="false" text="Clínica" visible="false">
