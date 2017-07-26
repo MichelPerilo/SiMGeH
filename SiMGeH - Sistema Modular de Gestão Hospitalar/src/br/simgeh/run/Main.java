@@ -23,9 +23,14 @@ public class Main extends Application {
     
     @Override
     public void start(Stage stage) throws Exception {
+        //https://stackoverflow.com/questions/23729277/javafx-fxml-load-file-issues-with-setting-root
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("/views/Vbox_Logon.fxml"));
+        Parent root = loader.load();
+        
         window = stage;
         window.setTitle("SiMGeH");
-        Parent root = FXMLLoader.load(getClass().getResource("../views/Vbox_Logon.fxml"));
+        //Parent root = FXMLLoader.load(getClass().getResource("/views/Vbox_Logon.fxml"));
         
         Scene scene = new Scene(root);
         
