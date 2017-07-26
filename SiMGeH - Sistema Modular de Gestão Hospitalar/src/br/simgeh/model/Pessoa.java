@@ -16,6 +16,7 @@ import java.util.Date;
     private String uNome;
     private String CPF;
     private Date dta_nascto;
+
     private int tel_fixo;
     private int tel_celular;
 

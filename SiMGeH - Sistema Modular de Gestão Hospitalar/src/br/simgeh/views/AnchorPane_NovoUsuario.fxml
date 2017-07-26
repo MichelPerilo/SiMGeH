@@ -7,49 +7,48 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<AnchorPane id="AnchorPane" prefHeight="472.0" prefWidth="694.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="br.simgeh.control.AnchorPane_NovoUsuarioController">
+<AnchorPane id="AnchorPane" prefHeight="458.0" prefWidth="729.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoUsuarioController">
    <children>
-      <Button layoutX="267.0" layoutY="402.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
-      <Button layoutX="341.0" layoutY="402.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" />
-      <Label layoutX="204.0" layoutY="270.0" text="Bairro:" />
-      <ChoiceBox layoutX="36.0" layoutY="285.0" prefHeight="25.0" prefWidth="160.0" />
-      <Label layoutX="37.0" layoutY="269.0" text="Cidade:" />
-      <TextField layoutX="369.0" layoutY="287.0" prefHeight="25.0" prefWidth="222.0" />
-      <Label layoutX="369.0" layoutY="270.0" text="Logradouro:" />
-      <Label layoutX="39.0" layoutY="323.0" text="Fone:" />
-      <TextField layoutX="598.0" layoutY="287.0" prefHeight="25.0" prefWidth="65.0" />
-      <TextField layoutX="37.0" layoutY="339.0" prefHeight="25.0" prefWidth="148.0" />
-      <Label layoutX="360.0" layoutY="214.0" text="CPF:" />
-      <TextField layoutX="203.0" layoutY="286.0" prefHeight="25.0" prefWidth="160.0" />
-      <Label layoutX="34.0" layoutY="173.0" text="Dados Pessoais">
+      <Button layoutX="282.0" layoutY="402.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
+      <Button layoutX="356.0" layoutY="402.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" />
+      <Label layoutX="219.0" layoutY="270.0" text="Bairro:" />
+      <ChoiceBox layoutX="51.0" layoutY="285.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="52.0" layoutY="269.0" text="Cidade:" />
+      <TextField layoutX="384.0" layoutY="287.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="384.0" layoutY="270.0" text="Logradouro:" />
+      <Label layoutX="54.0" layoutY="323.0" text="Fone:" />
+      <TextField layoutX="613.0" layoutY="287.0" prefHeight="25.0" prefWidth="65.0" />
+      <TextField layoutX="52.0" layoutY="339.0" prefHeight="25.0" prefWidth="148.0" />
+      <Label layoutX="375.0" layoutY="214.0" text="CPF:" />
+      <TextField layoutX="218.0" layoutY="286.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="49.0" layoutY="173.0" text="Dados Pessoais">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label layoutX="33.0" layoutY="73.0" text="Dados de Usuário">
+      <Label layoutX="48.0" layoutY="73.0" text="Dados de Usuário">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <RadioButton layoutX="600.0" layoutY="234.0" mnemonicParsing="false" text="Fêmea" />
-      <RadioButton layoutX="535.0" layoutY="234.0" mnemonicParsing="false" text="Macho" />
-      <Label layoutX="536.0" layoutY="217.0" text="Sexo:" />
-      <TextField layoutX="37.0" layoutY="231.0" prefHeight="25.0" prefWidth="310.0" />
-      <Label layoutX="36.0" layoutY="214.0" text="Nome:" />
-      <Label layoutX="269.0" layoutY="13.0" prefHeight="48.0" prefWidth="135.0" text="Novo Usuário">
+      <RadioButton layoutX="615.0" layoutY="234.0" mnemonicParsing="false" text="Fêmea" />
+      <RadioButton layoutX="550.0" layoutY="234.0" mnemonicParsing="false" text="Macho" />
+      <Label layoutX="551.0" layoutY="217.0" text="Sexo:" />
+      <TextField layoutX="52.0" layoutY="231.0" prefHeight="25.0" prefWidth="310.0" />
+      <Label layoutX="51.0" layoutY="214.0" text="Nome:" />
+      <Label layoutX="284.0" layoutY="13.0" prefHeight="48.0" prefWidth="135.0" text="Novo Usuário">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
-      <Separator layoutX="76.0" layoutY="165.0" prefHeight="0.0" prefWidth="548.0" />
-      <Label layoutX="35.0" layoutY="119.0" text="Usuário:" />
-      <TextField layoutX="87.0" layoutY="116.0" prefHeight="25.0" prefWidth="160.0" />
-      <TextField layoutX="323.0" layoutY="116.0" prefHeight="25.0" prefWidth="160.0" />
-      <Label layoutX="271.0" layoutY="119.0" text="Senha:" />
-      <ChoiceBox layoutX="520.0" layoutY="115.0" prefHeight="25.0" prefWidth="119.0" />
-      <Label layoutX="521.0" layoutY="98.0" text="Tipo:" />
-      <TextField layoutX="361.0" layoutY="230.0" prefHeight="25.0" prefWidth="160.0" />
-      <Label layoutX="598.0" layoutY="271.0" text="Número:" />
+      <Separator layoutX="91.0" layoutY="165.0" prefHeight="0.0" prefWidth="548.0" />
+      <Label layoutX="50.0" layoutY="119.0" text="Usuário:" />
+      <TextField layoutX="102.0" layoutY="116.0" prefHeight="25.0" prefWidth="160.0" />
+      <TextField layoutX="338.0" layoutY="116.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="286.0" layoutY="119.0" text="Senha:" />
+      <ChoiceBox layoutX="535.0" layoutY="115.0" prefHeight="25.0" prefWidth="119.0" />
+      <Label layoutX="536.0" layoutY="98.0" text="Tipo:" />
+      <TextField layoutX="376.0" layoutY="230.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="613.0" layoutY="271.0" text="Número:" />
    </children>
 </AnchorPane>
