@@ -12,13 +12,13 @@ import java.util.Date;
  * @author Bartô
  */
  public abstract class Pessoa {
+    private String CPF;
     private String pNome;
     private String uNome;
-    private String CPF;
     private Date dta_nascto;
-
     private int tel_fixo;
     private int tel_celular;
+    private String Endereco;
 
     public Pessoa(String pNome, String uNome, String CPF, Date dta_nascto, int tel_fixo, int tel_celular) {
         this.pNome = pNome;

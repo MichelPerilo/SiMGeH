@@ -14,4 +14,6 @@ public class Endereco {
     private String bairro;
     private String logradouro;
     private int numero;
+    
+    
 }
