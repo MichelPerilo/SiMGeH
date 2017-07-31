@@ -15,7 +15,7 @@ import javafx.scene.image.Image;
 
 /**
  *
- * @author Michel Perilo
+ * @author Michel Perilo 123
  */
 public class Main extends Application {
     
