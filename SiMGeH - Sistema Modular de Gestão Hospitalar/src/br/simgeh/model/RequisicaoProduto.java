@@ -7,11 +7,8 @@ package br.simgeh.model;
 
 /**
  *
- * @author miche
+ * @author Michel Perilo
  */
-public abstract class Servico {
-    private int protuario_id;
-    private Medico medico;
-    private Animal animal;
+public class RequisicaoProduto extends Requisicao{
     
 }
