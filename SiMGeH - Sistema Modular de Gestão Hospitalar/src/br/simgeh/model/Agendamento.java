@@ -11,7 +11,7 @@ package br.simgeh.model;
  * @author Michel Perilo
  */
 public class Agendamento {
-   
+    private int prontuario_id;
     private String data;
     private String hora;
     private Servico servico;
