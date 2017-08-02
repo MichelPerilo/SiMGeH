@@ -10,7 +10,7 @@ package br.simgeh.model;
  * @author Bartô
  */
 public class Animal {
-    private int id;
+    private String id;
     private String especie;
     private String nome;
     private String sexo;
@@ -20,7 +20,7 @@ public class Animal {
     private String pelagem;
     private Tutor tutor;
 
-    public Animal(int id, String especie, String nome, String sexo, int dta_nascto, float peso, String porte, String pelagem, Tutor tutor) {
+    public Animal(String id, String especie, String nome, String sexo, int dta_nascto, float peso, String porte, String pelagem, Tutor tutor) {
         this.id = id;
         this.especie = especie;
         this.nome = nome;
@@ -32,11 +32,11 @@ public class Animal {
         this.tutor = tutor;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -103,7 +103,5 @@ public class Animal {
     public void setTutor(Tutor tutor) {
         this.tutor = tutor;
     }
-    
-    
-    
+      
 }
