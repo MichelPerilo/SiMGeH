@@ -1,28 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.simgeh.data;
-
-import java.util.List;
+import br.simgeh.exeception.CadatroProdutoExistenteExeception;
+import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
+import br.simgeh.model.Produto;
+import java.io.IOException;
 
 /**
  *
- * @author Aluno
+ * @author Raylison
  */
+
+
 public interface IRepositorioProduto {
-    //public boolean cadastrarProduto(Animal animal);
     
-    public void buscarProduto(int crmv, int MATRICULA, String CPF);
-    
-   /**
-    *
-    * @param animal: recebe uma instância de cadastro de animal atualizada(com os novos dados)
-    */ 
-    //public boolean atualizarCDProduto(Produto prdot);
-    
-    //public boolean removerCDProduto(Animal animal);
-    
-    //public List<Produto> listarProduto();
+    public void cadastra(Produto p)  throws IOException, CadatroProdutoExistenteExeception;
+	public Produto procurar(String nome) throws ProcuraProdutoInexistenteExeception;
+	public boolean existe(String nome);
+	public void remover (String nome)  throws IOException, ProcuraProdutoInexistenteExeception;
+	public void  imprimiProduto() throws IOException;
+	
 }
