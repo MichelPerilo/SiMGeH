@@ -45,8 +45,6 @@ public class AnchorPane_InicioController implements Initializable {
     @FXML
     private Menu menu_agendamento; 
     @FXML
-    private MenuItem menuitem_novoagedamento;
-    @FXML
     private Menu menu_administracao;
     @FXML
     private Menu menu_clinica;
@@ -58,10 +56,11 @@ public class AnchorPane_InicioController implements Initializable {
     private Menu menu_sair;
     @FXML
     private MenuItem menuitem_sair;
-    @FXML
     private Stage inicioStage;
     @FXML
     private MenuItem menuitem_novousuario;
+    @FXML
+    private MenuItem menuitem_novopaciente;
 
     
     @Override
@@ -73,6 +72,7 @@ public class AnchorPane_InicioController implements Initializable {
         }
     }
     
+    @FXML
    public void handlerSair() throws IOException {
       boolean buttonconfirmar_clicked = showAnchorPane_DialogSair(); 
       if(buttonconfirmar_clicked){
@@ -101,14 +101,31 @@ public class AnchorPane_InicioController implements Initializable {
         
     }
     
-    public void handlerNovoAgendamento() throws IOException{
-        AnchorPane anchorpane_novoagendamento = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_NovoPaciente.fxml"));
-        anchorpane_main.getChildren().setAll(anchorpane_novoagendamento);
+    @FXML
+    public void handlerNovoPaciente() throws IOException{
+        showAnchorPane_NovoPaciente();
     }
     
+    public void showAnchorPane_NovoPaciente() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AnchorPane_NovoPacienteController.class.getResource("../views/AnchorPane_NovoPaciente.fxml"));
+        AnchorPane page = (AnchorPane) loader.load();
+        
+        Stage novoPacienteStage = new Stage();
+        novoPacienteStage.setTitle("Novo Paciente");
+        Scene scene = new Scene(page);
+        novoPacienteStage.setScene(scene);
+        novoPacienteStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
+        novoPacienteStage.setResizable(false);
+        
+        AnchorPane_NovoPacienteController controller = loader.getController();
+        controller.setStage(novoPacienteStage);
+        
+        novoPacienteStage.showAndWait();
+    }
+    
+    
     public void handlerInicio() throws IOException{
-        AnchorPane anchorpane_iniciar = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Iniciar.fxml"));
-        anchorpane_main.getChildren().setAll(anchorpane_iniciar);
         menu_agendamento.setVisible(true);
         menu_administracao.setVisible(true);
         menu_clinica.setVisible(true);
@@ -117,7 +134,13 @@ public class AnchorPane_InicioController implements Initializable {
         menu_sair.setVisible(true);
         
     }
+    
+    public void handlerBuscarPaciente() throws IOException{
+        AnchorPane anchorpane_iniciar = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Pacientes.fxml"));
+        anchorpane_main.getChildren().setAll(anchorpane_iniciar);
+    }
 
+    @FXML
     public void handlerNovoUsuario() throws IOException{
         showAnchorPane_NovoUsuario();
     }

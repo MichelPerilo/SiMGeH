@@ -44,6 +44,7 @@ public class AnchorPane_DialogSairController implements Initializable {
         getDialogStage().close();
     }
     
+    @FXML
     public void handlerButtonCancelar() throws IOException{
         getDialogStage().close();
     }

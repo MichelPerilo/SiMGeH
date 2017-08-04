@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_InicioController">
+<AnchorPane minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_InicioController">
    <children>
-      <VBox prefHeight="720.0" prefWidth="1200.0">
+      <VBox minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0">
          <children>
-            <MenuBar minHeight="25.0" minWidth="1200.0" prefHeight="25.0" prefWidth="1200.0">
+            <MenuBar minHeight="30.0" minWidth="1200.0" prefHeight="30.0" prefWidth="1200.0">
               <menus>
                 <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Recepção" visible="false">
                   <items>
-                    <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Paciente" />
-                        <MenuItem mnemonicParsing="false" text="Buscar Paciente" />
+                    <MenuItem fx:id="menuitem_novopaciente" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo Paciente" />
+                        <MenuItem mnemonicParsing="false" onAction="#handlerBuscarPaciente" text="Buscar Paciente" />
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <MenuItem mnemonicParsing="false" text="Agenda" />
                   </items>
@@ -50,7 +51,18 @@
                   </Menu>
               </menus>
             </MenuBar>
-            <AnchorPane fx:id="anchorpane_main" prefHeight="695.0" prefWidth="1200.0" />
+            <AnchorPane fx:id="anchorpane_main" minHeight="500.0" minWidth="800.0" prefHeight="500.0" prefWidth="800.0">
+               <VBox.margin>
+                  <Insets left="200.0" top="50.0" />
+               </VBox.margin></AnchorPane>
+            <ImageView fitHeight="109.0" fitWidth="136.0" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets left="1030.0" top="10.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@qms_v2_h_rgb.png" />
+               </image>
+            </ImageView>
          </children>
       </VBox>
    </children>
