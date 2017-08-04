@@ -24,10 +24,10 @@ public class ControladorProduto implements IGerenciadorProduto{
     }
 
    
-    public void cadatrarProduto(String nome, String tipo, String descricao) throws IOException,
+    public void cadatrarProduto(String nome, String tipo, String descricao, int id, int qtd) throws IOException,
             CadatroProdutoExistenteExeception{
 
-    Produto p = new Produto(nome,tipo,descricao);    
+    Produto p = new Produto(nome,tipo,descricao,id,qtd);    
     this.produto.cadatrar(p);
 
     }

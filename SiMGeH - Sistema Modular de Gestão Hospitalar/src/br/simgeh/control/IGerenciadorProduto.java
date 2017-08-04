@@ -11,7 +11,7 @@ import java.io.IOException;
  */
 public interface IGerenciadorProduto {
     
-    public void cadatrarProduto(String nome, String tipo, String descricao) throws IOException,
+    public void cadatrarProduto(String nome, String tipo, String descricao,int id, int qtd) throws IOException,
             CadatroProdutoExistenteExeception;
 
     public void exibiProduto() throws IOException;

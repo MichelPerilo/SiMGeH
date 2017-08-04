@@ -46,9 +46,9 @@ public class TesteCadastroProduto {
 					           
                     
                     
-					fachada.cadatrarProduto("Dipirona","analgesico","tira dor");
-					fachada.cadatrarProduto( "Rivotril","Calmante","Deixa calmo");
-					fachada.cadatrarProduto( "Amaxilina","Antibiotico","Tira bacteria");
+					fachada.cadatrarProduto("Dipirona","analgesico","tira dor",01,10);
+					fachada.cadatrarProduto( "Rivotril","Calmante","Deixa calmo",02,20);
+					fachada.cadatrarProduto( "Amaxilina","Antibiotico","Tira bacteria",03,5);
 					
 					
 					System.out.println("CADASTRO COM SUCESSO");
