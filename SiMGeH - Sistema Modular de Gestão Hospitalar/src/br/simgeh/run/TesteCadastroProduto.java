@@ -5,6 +5,7 @@ import br.simgeh.control.ControladorProduto;
 import br.simgeh.control.IGerenciadorProduto;
 import br.simgeh.exeception.CadatroProdutoExistenteExeception;
 import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
+
 import java.io.IOException;
 import java.util.Scanner;
 
@@ -13,6 +14,7 @@ import java.util.Scanner;
  * @author Raylison
  */
 public class TesteCadastroProduto {
+
     
     public static void main(String[] agrs) throws IOException,
 			ProcuraProdutoInexistenteExeception,

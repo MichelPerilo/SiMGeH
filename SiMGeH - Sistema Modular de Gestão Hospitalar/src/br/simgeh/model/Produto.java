@@ -3,6 +3,7 @@ package br.simgeh.model;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.io.Serializable;
 
 
 /**
@@ -11,7 +12,7 @@ import java.util.Date;
  */
 
 
-public class Produto {
+public class Produto implements Serializable{
     private String nome;
     private String tipo;
     private String descricao;

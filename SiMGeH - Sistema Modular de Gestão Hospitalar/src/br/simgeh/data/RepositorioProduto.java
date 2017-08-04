@@ -9,13 +9,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-
+import java.io.Serializable;
 /**
  *
  * @author Raylison
  */
 
-public class RepositorioProduto implements IRepositorioProduto{
+public class RepositorioProduto implements IRepositorioProduto, Serializable{
     
     // atributos
 	private Produto[] produto;
@@ -35,7 +35,7 @@ public class RepositorioProduto implements IRepositorioProduto{
 
 	public static IRepositorioProduto getInstance() throws IOException {
 		if (instance == null) {
-			instance = abrirArquivo();
+		    instance = abrirArquivo();
 		}
 		return (IRepositorioProduto) instance;
 	}
@@ -43,13 +43,14 @@ public class RepositorioProduto implements IRepositorioProduto{
 	private static RepositorioProduto abrirArquivo() throws IOException {
 
 		RepositorioProduto instanciaLocal = null;
-		File in = new File("C:\\Users\\Raylison\\Documents\\GitHub\\SiMGeH\\SiMGeH - Sistema Modular de Gestão Hospitalar\\ARQUIVOS\\CADASTRO PRODUTO\\cadastroproduto.txt");
+		File in = new File("ARQUIVOS\\CADASTRO DE PRODUTOS\\cadastroproduto.bin");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
 			Object o = ois.readObject();
+                        
 			instanciaLocal = (RepositorioProduto) o;
 		} catch (IOException | ClassNotFoundException e) {
 			
@@ -76,9 +77,9 @@ public class RepositorioProduto implements IRepositorioProduto{
 		}
 
 		File dir;
-                dir = new File("C:\\Users\\Raylison\\Documents\\GitHub\\SiMGeH\\SiMGeH - Sistema Modular de Gestão Hospitalar\\ARQUIVOS");
+                dir = new File("ARQUIVOS\\CADASTRO DE PRODUTOS");
 		dir.mkdirs();
-		File out = new File(dir,"cadastroproduto.txt");
+		File out = new File(dir,"cadastroproduto.bin");
         
 		if (!out.exists()){			
 			out.createNewFile();
