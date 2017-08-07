@@ -6,24 +6,25 @@
 package br.simgeh.data;
 
 import br.simgeh.model.Animal;
-import java.util.List;
+//import java.util.List;
 
 /**
  *
  * @author Bartô
  */
 public interface IRepositorioAnimal {
-    public boolean cadastrarAnimal(Animal animal);
-    
-    public void buscarMedico(int crmv, int MATRICULA, String CPF);
-    
-   /**
-    *
-    * @param animal: recebe uma instância de cadastro de animal atualizada(com os novos dados)
-    */ 
-    public boolean atualizarCDAnimal(Animal animal);
-    
-    public boolean removerCDAnimal(Animal animal);
-    
-    public List<Animal> listarAnimal();
+	
+	public boolean cadastrar(Animal a);
+	
+	public void atualizar(Animal a);
+
+	public Animal buscaPorID(String ID);
+
+	public Animal buscarPorCPFTutor(String CPF);
+	
+	void remover(String ID);
+
+	//public List<Animal> listarTodos();
 }
+
+
