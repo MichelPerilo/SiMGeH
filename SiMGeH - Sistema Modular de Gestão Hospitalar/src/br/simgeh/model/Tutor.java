@@ -9,24 +9,7 @@ package br.simgeh.model;
  *
  * @author Bartô
  */
-<<<<<<< HEAD
-public class Tutor  {            //TUTOR NÃO ESTENDE PESSOA
-    private String nome;
-    private String cpf;
-    private Endereco endereco;
-    private String fone_1;
-    private String fone_2;
-    
-   public Tutor(String nome, String cpf, Endereco endereco, String fone_1, String fone_2){
-       this.nome = nome;
-       this.cpf = cpf;
-       this.endereco = endereco;
-       this.fone_1 = fone_1;
-       this.fone_2 = fone_2;
-   }
-   
-   
-=======
+      
 public class Tutor {
 
 	private String nome;
@@ -90,5 +73,4 @@ public class Tutor {
 			return false;
 	}
 	
->>>>>>> 132a462aceb9003e12a6b3b184c94b6609e80afa
 }

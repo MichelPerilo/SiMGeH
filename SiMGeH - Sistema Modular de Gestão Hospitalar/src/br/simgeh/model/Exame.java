@@ -11,4 +11,13 @@ package br.simgeh.model;
  */
 public abstract class Exame extends Servico{
     
+    Medico medico;
+    Animal animal;
+    Requisicao requisicao;
+    
+    public Exame(Medico medico, Animal animal, Requisicao requisicao){
+        this.medico = medico;
+        this.animal = animal;
+        this.requisicao = requisicao;
+    }
 }

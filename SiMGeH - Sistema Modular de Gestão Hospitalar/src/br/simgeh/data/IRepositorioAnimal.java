@@ -12,7 +12,7 @@ import br.simgeh.model.Animal;
  *
  * @author Bartô
  */
-public interface IRepositorioAnimal {
+public  abstract interface IRepositorioAnimal {
 	
 	public boolean cadastrar(Animal a);
 	
