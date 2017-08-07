@@ -10,17 +10,20 @@ package br.simgeh.model;
  * @author Bartô
  */
 public class Animal {
-    private int id;
-    private String especie;
+    private String id;
     private String nome;
     private String sexo;
+    private String especie;
+    private String raca;
     private int dta_nascto;
     private float peso;
     private String porte;
     private String pelagem;
     private Tutor tutor;
+    
+    
 
-    public Animal(int id, String especie, String nome, String sexo, int dta_nascto, float peso, String porte, String pelagem, Tutor tutor) {
+    public Animal(String id, String especie, String nome, String sexo, int dta_nascto, float peso, String porte, String pelagem, Tutor tutor) {
         this.id = id;
         this.especie = especie;
         this.nome = nome;
@@ -32,22 +35,14 @@ public class Animal {
         this.tutor = tutor;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
-
-    public String getEspecie() {
-        return especie;
-    }
-
-    public void setEspecie(String especie) {
-        this.especie = especie;
-    }
-
+    
     public String getNome() {
         return nome;
     }
@@ -55,7 +50,7 @@ public class Animal {
     public void setNome(String nome) {
         this.nome = nome;
     }
-
+    
     public String getSexo() {
         return sexo;
     }
@@ -63,7 +58,23 @@ public class Animal {
     public void setSexo(String sexo) {
         this.sexo = sexo;
     }
+    
+    public String getEspecie() {
+        return especie;
+    }
 
+    public String getRaca() {
+		return raca;
+	}
+
+	public void setRaca(String raca) {
+		this.raca = raca;
+	}
+
+	public void setEspecie(String especie) {
+        this.especie = especie;
+    }
+  
     public int getDta_nascto() {
         return dta_nascto;
     }
@@ -104,6 +115,10 @@ public class Animal {
         this.tutor = tutor;
     }
     
-    
-    
+    public boolean equals(Animal a) {
+    	if(this.getId().equals(a.getId()))
+    		return true;
+    	
+    	return false;
+    }
 }

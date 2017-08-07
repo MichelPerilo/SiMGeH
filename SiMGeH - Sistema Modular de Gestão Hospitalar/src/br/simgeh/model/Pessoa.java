@@ -13,16 +13,16 @@ import java.util.Date;
  */
  public abstract class Pessoa {
     private String CPF;
-    private String pNome;
-    private String uNome;
+    private String nome;
+    private String sobrenome;
     private Date dta_nascto;
     private int tel_fixo;
     private int tel_celular;
     private String Endereco;
 
     public Pessoa(String pNome, String uNome, String CPF, Date dta_nascto, int tel_fixo, int tel_celular) {
-        this.pNome = pNome;
-        this.uNome = uNome;
+        this.nome = pNome;
+        this.sobrenome = uNome;
         this.CPF = CPF;
         this.dta_nascto = dta_nascto;
         this.tel_fixo = tel_fixo;
@@ -30,19 +30,19 @@ import java.util.Date;
     }
 
     public String getpNome() {
-        return pNome;
+        return nome;
     }
 
     public void setpNome(String pNome) {
-        this.pNome = pNome;
+        this.nome = pNome;
     }
 
     public String getuNome() {
-        return uNome;
+        return sobrenome;
     }
 
     public void setuNome(String uNome) {
-        this.uNome = uNome;
+        this.sobrenome = uNome;
     }
 
     public String getCPF() {
