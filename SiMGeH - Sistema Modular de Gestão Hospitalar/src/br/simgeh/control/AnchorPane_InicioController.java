@@ -74,15 +74,7 @@ public class AnchorPane_InicioController implements Initializable {
             Logger.getLogger(AnchorPane_InicioController.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
-    @FXML
-   public void handlerSair() throws IOException {
-      boolean buttonconfirmar_clicked = showAnchorPane_DialogSair(); 
-      if(buttonconfirmar_clicked){
-      
-      }
-    }
-    
+   
     /**
      * @author Bartoh
      */
@@ -100,27 +92,6 @@ public class AnchorPane_InicioController implements Initializable {
     	} else {
     	    // ... user chose CANCEL or closed the dialog
     	}
-    }
-    
-    public boolean showAnchorPane_DialogSair() throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(AnchorPane_DialogSairController.class.getResource("../views/AnchorPane_DialogSair.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();
-        
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Confirmação");
-        Scene scene = new Scene(page);
-        dialogStage.setScene(scene);
-        dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
-        dialogStage.setResizable(false);
-        
-        AnchorPane_DialogSairController controller = loader.getController();
-        controller.setDialogStage(dialogStage);
-        
-        dialogStage.showAndWait();
-        
-        return controller.isButtonSimClicked();
-        
     }
     
     @FXML
