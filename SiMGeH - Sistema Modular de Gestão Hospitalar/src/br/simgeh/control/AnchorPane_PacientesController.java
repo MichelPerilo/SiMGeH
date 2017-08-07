@@ -5,36 +5,23 @@
  */
 package br.simgeh.control;
 
-
 import java.net.URL;
-
 import java.util.ResourceBundle;
-
-import javafx.fxml.FXML;
-
 import javafx.fxml.Initializable;
-
-import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
  *
- * @author Michel Perilo
+ * @author emprel
  */
-public class AnchorPane_IniciarController implements Initializable {
+public class AnchorPane_PacientesController implements Initializable {
 
-
-    
-    @FXML
-    protected AnchorPane anchorpane_main;
-    @FXML
- 
-       
-    
+    /**
+     * Initializes the controller class.
+     */
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
-       
-    }
-    
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
     
 }

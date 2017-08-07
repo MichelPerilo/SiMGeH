@@ -39,15 +39,18 @@ public class AnchorPane_DialogSairController implements Initializable {
         // TODO
     }    
     
+    @FXML
     public void handlerButtonSim() throws IOException{
         buttonconfirmar_clicked = true;
         getDialogStage().close();
     }
     
+    @FXML
     public void handlerButtonCancelar() throws IOException{
         getDialogStage().close();
     }
     
+    @FXML
     public boolean isButtonSimClicked(){
     return buttonconfirmar_clicked;
     }

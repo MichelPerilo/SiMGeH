@@ -22,10 +22,26 @@ public class AnchorPane_NovoPacienteController implements Initializable {
 
   
     
+    private Stage stage;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
     }    
+
+    /**
+     * @return the stage
+     */
+    public Stage getStage() {
+        return stage;
+    }
+
+    /**
+     * @param stage the stage to set
+     */
+    public void setStage(Stage stage) {
+        this.stage = stage;
+    }
     
    
     
