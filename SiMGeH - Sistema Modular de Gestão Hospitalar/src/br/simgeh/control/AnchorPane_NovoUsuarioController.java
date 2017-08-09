@@ -23,8 +23,8 @@ public class AnchorPane_NovoUsuarioController implements Initializable {
 	
 	private Stage stage;
 	
-	@FXML
-	private ComboBox<String> acctTypeCbbx;
+	//@FXML
+	//private ComboBox<String> acctTypeCbbx;
     /**
      * Initializes the controller class.
      */
@@ -44,7 +44,7 @@ public class AnchorPane_NovoUsuarioController implements Initializable {
     }
     
     
-    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
+    //ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
     
     
     @Override
