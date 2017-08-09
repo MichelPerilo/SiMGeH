@@ -8,9 +8,13 @@ package br.simgeh.control;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 /**
@@ -20,13 +24,14 @@ import javafx.stage.Stage;
  */
 public class AnchorPane_NovoPacienteController implements Initializable {
 
-  
-    
     private Stage stage;
+	@FXML 
+	private ComboBox<String> especieCbbx;
+	ObservableList<String> listEspecieCbbx = FXCollections.observableArrayList("Gato", "Cachorro");
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        especieCbbx.setItems(listEspecieCbbx);
     }    
 
     /**

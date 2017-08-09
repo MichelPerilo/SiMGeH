@@ -20,23 +20,15 @@ import javafx.stage.Stage;
  * @author miche
  */
 public class AnchorPane_NovoUsuarioController implements Initializable {
-
+	
+	private Stage stage;
+	
+	@FXML
+	private ComboBox<String> acctTypeCbbx;
     /**
      * Initializes the controller class.
      */
-    @FXML 
-    //private ComboBox<String> acctTypeCbbx;
     
-    //ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
-    
-    
-    private Stage stage;
-    
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-       //acctTypeCbbx.setItems(listAccts_Type);
-    }    
-
     /**
      * @return the stage
      */
@@ -51,4 +43,13 @@ public class AnchorPane_NovoUsuarioController implements Initializable {
         this.stage = stage;
     }
     
+    
+    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+      // acctTypeCbbx.setItems(listAccts_Type);
+    }    
+
 }
