@@ -64,6 +64,8 @@ public class AnchorPane_InicioController implements Initializable {
     private MenuItem menuitem_novousuario;
     @FXML
     private MenuItem menuitem_novopaciente;
+    @FXML
+    private MenuItem menuitem_painelatendimentos;
     
     
     @Override
@@ -131,6 +133,11 @@ public class AnchorPane_InicioController implements Initializable {
     public void handlerBuscarPaciente() throws IOException{
         AnchorPane anchorpane_iniciar = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Pacientes.fxml"));
         anchorpane_main.getChildren().setAll(anchorpane_iniciar);
+    }
+    
+    public void handlerPainelAtendimentos() throws IOException{
+        AnchorPane anchorpane_painel_medico = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_PainelAtendimentos.fxml"));
+       anchorpane_main.getChildren().setAll(anchorpane_painel_medico);
     }
 
     @FXML
