@@ -50,40 +50,12 @@ public class Vbox_LogonController implements Initializable {
     @FXML 
     private ComboBox<String> acctTypeCbbx;
     
-    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Recepcionista", "Técnico Laboratorial", "Mèdico");
+    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
     
     
     @Override
     public void initialize(URL location, ResourceBundle resources) {
     	acctTypeCbbx.setItems(listAccts_Type);
-    }
-    
-   public void handlerSair() throws IOException {
-      boolean buttonconfirmar_clicked = showAnchorPane_DialogSair(); 
-      if(buttonconfirmar_clicked){
-      
-      }
-    } 
-    
-    public boolean showAnchorPane_DialogSair() throws IOException{
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(AnchorPane_DialogSairController.class.getResource("/br/simgeh/gui/AnchorPane_DialogSair.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();
-        
-        Stage dialogStage = new Stage();
-        dialogStage.setTitle("Confirmação");
-        Scene scene = new Scene(page);
-        dialogStage.setScene(scene);
-        dialogStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
-        dialogStage.setResizable(false);
-        
-        AnchorPane_DialogSairController controller = loader.getController();
-        controller.setDialogStage(dialogStage);
-        
-        dialogStage.showAndWait();
-        
-        return controller.isButtonSimClicked();
-        
     }
     
     public void showAnchorPane_Inicio() throws IOException{

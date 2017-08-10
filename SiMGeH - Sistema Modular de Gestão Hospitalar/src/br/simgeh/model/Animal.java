@@ -5,6 +5,8 @@
  */
 package br.simgeh.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Bartô
@@ -20,6 +22,7 @@ public class Animal {
     private String porte;
     private String pelagem;
     private Tutor tutor;
+    private Date criacao;
     
     
 

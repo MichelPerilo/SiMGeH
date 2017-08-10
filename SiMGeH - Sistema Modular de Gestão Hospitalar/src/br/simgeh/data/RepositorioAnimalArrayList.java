@@ -34,7 +34,7 @@ public class RepositorioAnimalArrayList implements IRepositorioAnimal {
 	private static RepositorioAnimalArrayList lerDoArquivo() {
 		RepositorioAnimalArrayList instanciaLocal = null;
 
-		File in = new File("animal.dat");
+		File in = new File("ARQUIVOS\\CADASTRO DE ANIMAL\\animal.bin");
 		FileInputStream fis = null;
 		ObjectInputStream ois = null;
 		try {
@@ -60,7 +60,7 @@ public class RepositorioAnimalArrayList implements IRepositorioAnimal {
 		if (instance == null) {
 			return;
 		}
-		File out = new File("animal.dat");
+		File out = new File("ARQUIVOS\\CADASTRO DE ANIMAL\\animal.bin");
 		FileOutputStream fos = null;
 		ObjectOutputStream oos = null;
 
