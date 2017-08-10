@@ -3,13 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
-package br.simgeh.control;
+package br.simgeh.exeception;
 
 /**
  *
- * @author miche
+ * @author Michel Perilo
  */
-public class ControladorProntuario {
-
+public class ProcuraAnimalInexistenteException extends Exception {
+    
 }
