@@ -30,4 +30,38 @@ CREATE TABLE medico (
 );
 
 CREATE TABLE animal(
+ID VARCHAR(20),
+nome VARCHAR(90),
+especie VARCHAR(128),
+peso SMALLINT(3),
+
+ 
+CREATE TABLE tutor(
+nome VARCHAR(30),
+sobrenome VARCHAR(100),
+CPF VARCHAR(14),
+Dta_nacto DATE,
+tel_fixo VARCHAR(13),
+tel_celular VARCHAR(14),
+CONSTRAINT tuto_pk primary key(CPF)
+);
+
+ALTER TABLE tutor
+	DROP PRIMARY KEY;
+    
+ALTER table tutor
+	ADD CONSTRAINT tutor_pessoa_fk foreign key(CPF_Tutor) references pessoa(CPF);
+	
   
+CREATE TABLE prontuario(
+ID VARCHAR(17),
+constraint prontuario_pk primary key(ID)
+);
+
+create table servico(
+ID VARCHAR(10),
+ID_Prontuario VARCHAR(17),
+Type VARCHAR(100) 
+);
+
+

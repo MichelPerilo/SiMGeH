@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.Label;
 import javafx.scene.control.Menu;
@@ -46,9 +47,15 @@ public class Vbox_LogonController implements Initializable {
     @FXML
     private Button btn_entrar;
     
+    @FXML 
+    private ComboBox<String> acctTypeCbbx;
+    
+    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Recepcionista", "Técnico Laboratorial", "Mèdico");
+    
+    
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-
+    	acctTypeCbbx.setItems(listAccts_Type);
     }
     
    public void handlerSair() throws IOException {
