@@ -26,7 +26,7 @@ import javafx.scene.layout.AnchorPane;
  *
  * @author Raylison
  */
-public class AnchorPane_Farmaco implements Initializable {
+public class AnchorPane_FarmacoController implements Initializable {
 
     /**
      * Initializes the controller class.
@@ -55,7 +55,7 @@ public class AnchorPane_Farmaco implements Initializable {
     
     private IGerenciadorProduto fachada;
 
-    public AnchorPane_Farmaco() {
+    public AnchorPane_FarmacoController() {
         this.fachada = ControladorProduto.getInstance();
     }
     
@@ -133,7 +133,7 @@ public class AnchorPane_Farmaco implements Initializable {
             alert.setHeaderText(ppi.getMessage());
             alert.showAndWait();
 	}
-	     
+	 
     }
     
     
