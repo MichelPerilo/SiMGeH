@@ -22,6 +22,10 @@ public class Prontuario {
     public Prontuario(Animal animal){
         this.animal = animal;
     }
+
+	public Animal getAnimal() {
+		return this.animal;
+	}
     
 
     

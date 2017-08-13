@@ -7,6 +7,8 @@ package br.simgeh.control;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.ResourceBundle;
 import javafx.scene.control.ToggleButton;
 import javafx.collections.FXCollections;
@@ -15,7 +17,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 /**
@@ -34,19 +38,30 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     private ToggleButton rdBtnSexM = new RadioButton();
     @FXML
     private ToggleButton rdBtnSexF = new RadioButton();
-   
+    @FXML 
+    private TextField dtaAtualLbl;
     
             
-    ObservableList<String> listCidadeCbbx = FXCollections.observableArrayList("Recife", "Olinda", "Jaboatão", "Itapissuma");
-    ObservableList<String> listEspecieCbbx = FXCollections.observableArrayList("Gato", "Cachorro");
+    private ObservableList<String> listCidadeCbbx = FXCollections.observableArrayList("Recife", "Olinda", "Jaboatão", "Itapissuma");
+    private ObservableList<String> listEspecieCbbx = FXCollections.observableArrayList("Gato", "Cachorro");
+    private Calendar dtaAtual = Calendar.getInstance();
+    SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+	String a = s.format(dtaAtual.getTime());
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         especieCbbx.setItems(listEspecieCbbx);
         cidadeCbbx.setItems(listCidadeCbbx);
+        dtaAtualLbl.setText(a);
+        dtaAtualLbl.setDisable(true); //desativa o text field para ser somente leitura.
         
-        if(rdBtnSexF.isSelected())
+        if(rdBtnSexF.isSelected()) {
             rdBtnSexM.setVisible(false);
+        }    
+        else if(rdBtnSexM.isSelected()) {
+        	rdBtnSexF.setVisible(false);
+        }
+        	
     }    
 
     /**

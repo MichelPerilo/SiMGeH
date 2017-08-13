@@ -77,6 +77,15 @@ public class RepositorioAnimalArrayList implements IRepositorioAnimal {
 		}
 	}
 	
+	public boolean existe(Animal a) {
+		for(Animal a1: getInstance().listaAnimal) {
+			if(a1.equals(a)) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 	
 	@Override
 	public boolean cadastrar(Animal a) {

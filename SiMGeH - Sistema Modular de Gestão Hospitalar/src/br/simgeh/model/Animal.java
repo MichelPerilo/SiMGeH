@@ -115,6 +115,10 @@ public class Animal {
         this.tutor = tutor;
     }
     
+    public String getCPFTutor() {
+    	return this.getTutor().getCpf();
+    }
+    
     public boolean equals(Animal a) {
     	if(this.getId().equals(a.getId()))
     		return true;

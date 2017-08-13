@@ -100,6 +100,7 @@ public class AnchorPane_InicioController implements Initializable {
         showAnchorPane_NovoPaciente();
     }
     
+    
     public void showAnchorPane_NovoPaciente() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(AnchorPane_NovoPacienteController.class.getResource("../views/AnchorPane_NovoPaciente.fxml"));
