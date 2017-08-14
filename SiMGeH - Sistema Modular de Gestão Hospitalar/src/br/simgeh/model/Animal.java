@@ -124,4 +124,10 @@ public class Animal {
     	
     	return false;
     }
+    
+    public String toString(){
+        String animal;
+        animal = "Ficha nº: " + this.id + " - " + "Nome: " + this.nome + " - " + "Tutor: " + this.tutor.getNome();
+        return animal;
+    }
 }

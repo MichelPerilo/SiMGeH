@@ -11,13 +11,17 @@ import br.simgeh.exeception.CadastroProntuarioExistenteException;
 import br.simgeh.exeception.CadastroTutorExistenteException;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -42,7 +46,7 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     @FXML
     private Button btn_gerarregistro;
     
- 
+    Integer i=1;
     
     
     @Override
@@ -68,7 +72,8 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     private void handlerGerarRegistro(){
        
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
-        String id = "1";
+         i++;
+        String id = i.toString();
         String especie = "dog";
         String nome = this.txtfld_nome.getText();
         String sexo = "masc";
@@ -84,7 +89,7 @@ public class AnchorPane_NovoPacienteController implements Initializable {
         String bairro = "Ipsep";
         String logradouro = "Rua Manoel Medeiros";
         int numero = 225;
-   
+        
    
   
         try {
@@ -99,10 +104,28 @@ public class AnchorPane_NovoPacienteController implements Initializable {
             Logger.getLogger(AnchorPane_NovoPacienteController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CadastroTutorExistenteException ex) {
             Logger.getLogger(AnchorPane_NovoPacienteController.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            handlerConfirmacao();
+             
         }
 
-        System.out.println("CADASTRO REALIZADO");
+      
+        
    }
    
+    private void handlerConfirmacao(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    	alert.setHeaderText("NOVO PACIENTE CADASTRADO COM SUCESSO");
+        alert.setTitle("Paciente Cadastrado");
+    	
+    	Optional<ButtonType> result = alert.showAndWait();
+    	if (result.get() == ButtonType.OK){
+    	    // ... user chose OK
+    		stage.close();
+    		
+    	} else {
+    	    // ... user chose CANCEL or closed the dialog
+    	}
+    }
     
 }

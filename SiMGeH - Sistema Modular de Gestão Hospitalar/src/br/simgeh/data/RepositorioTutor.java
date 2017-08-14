@@ -15,12 +15,13 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.Serializable;
 
 /**
  *
  * @author Michel Perilo
  */
-public class RepositorioTutor {
+public class RepositorioTutor implements IRepositorioTutor, Serializable {
     
      //atributos
 	private Tutor[] tutor;

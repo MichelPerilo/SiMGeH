@@ -14,6 +14,7 @@ import br.simgeh.model.Endereco;
 import br.simgeh.model.Prontuario;
 import br.simgeh.model.Tutor;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -46,11 +47,10 @@ public class ControladorAnimal_A implements IGerenciadorAnimal_A{
     this.tutor.cadastrar(t);   
     this.endereco.cadastrar(e);
     Prontuario p = new Prontuario(a);
-    this.prontuario.cadatrar(p);
-    
-
-         
+    this.prontuario.cadatrar(p);     
     }
 
-    
+    public ArrayList<Animal> allAnimals(){
+        return this.animal.allAnimals();
+    }
 }

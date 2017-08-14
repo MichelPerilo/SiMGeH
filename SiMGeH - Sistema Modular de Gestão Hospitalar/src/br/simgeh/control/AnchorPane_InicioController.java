@@ -79,9 +79,7 @@ public class AnchorPane_InicioController implements Initializable {
         }
     }
    
-    /**
-     * @author Bartoh
-     */
+    
     @FXML
     public void sair() throws IOException {
     	Alert alert = new Alert(AlertType.CONFIRMATION);
