@@ -7,8 +7,8 @@ package br.simgeh.exeception;
 
 /**
  *
- * @author Michel Perilo
+ * @author emprel
  */
-public class CadastroProntuarioExistenteException extends Exception {
+public class ProcurarTutorInexistenteException extends Exception {
     
 }

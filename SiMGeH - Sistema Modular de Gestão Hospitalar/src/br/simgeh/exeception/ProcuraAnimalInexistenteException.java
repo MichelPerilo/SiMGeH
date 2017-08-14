@@ -9,6 +9,6 @@ package br.simgeh.exeception;
  *
  * @author Michel Perilo
  */
-public class CadastroProntuarioExistenteException extends Exception {
+public class ProcuraAnimalInexistenteException extends Exception {
     
 }

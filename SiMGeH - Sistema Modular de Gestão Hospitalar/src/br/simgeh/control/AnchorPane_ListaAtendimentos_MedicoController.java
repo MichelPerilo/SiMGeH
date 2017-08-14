@@ -12,7 +12,7 @@ import javafx.fxml.Initializable;
 /**
  * FXML Controller class
  *
- * @author emprel
+ * @author Michel Perilo
  */
 public class AnchorPane_ListaAtendimentos_MedicoController implements Initializable {
 
