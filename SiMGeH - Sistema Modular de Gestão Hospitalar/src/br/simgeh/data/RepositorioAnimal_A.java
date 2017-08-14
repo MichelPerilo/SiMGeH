@@ -15,6 +15,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
 
 /**
  *
@@ -188,6 +189,29 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 	
 		return i;
 	}
+        
+        public ArrayList<Animal> allAnimals(){
+            ArrayList<Animal> animais = new ArrayList<Animal>();
+            for (int i =0; i < animal.length; i++){
+                if (animal[i] != null){
+                    animais.add(animal[i]);
+                }
+            }
+            
+            return animais;
+        }
+        
+        public ArrayList<Animal> animaisporCPF(String cpf){
+            ArrayList<Animal> animais = new ArrayList<Animal>();
+            for (int i =0; i < animal.length; i++){
+                if (animal[i] != null && cpf == animal[i].getTutor().getCpf()){
+                    animais.add(animal[i]);
+                }
+            }
+            return animais;
+        }
+        
+        
 
 	private void duplicaArrayCliente() {
 

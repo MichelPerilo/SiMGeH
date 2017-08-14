@@ -9,6 +9,7 @@ import br.simgeh.exeception.CadastroAnimalExistenteException;
 import br.simgeh.exeception.ProcuraAnimalInexistenteException;
 import br.simgeh.model.Animal;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -21,5 +22,7 @@ public interface IRepositorioAnimal_A {
     public boolean existe(String cpf, String nome);
     public void remover(String cpf, String nome) throws IOException, ProcuraAnimalInexistenteException;
     public void  imprimiAnimal() throws IOException;
+    public ArrayList<Animal> allAnimals();
+    public ArrayList<Animal> animaisporCPF(String cpf);
     
 }
