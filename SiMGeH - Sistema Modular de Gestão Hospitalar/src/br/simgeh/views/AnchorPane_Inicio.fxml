@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_InicioController">
+   <children>
+      <VBox minHeight="720.0" minWidth="1200.0" prefHeight="720.0" prefWidth="1200.0">
+         <children>
+            <MenuBar minHeight="30.0" minWidth="1200.0" prefHeight="30.0" prefWidth="1200.0">
+              <menus>
+                <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Recepção">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Paciente">
+                          <items>
+                          <MenuItem fx:id="menuitem_novopaciente" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo Paciente" />
+                              <MenuItem mnemonicParsing="false" onAction="#handlerBuscarPaciente" text="Buscar Paciente" />
+                          </items>
+                        </Menu>
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <Menu mnemonicParsing="false" text="Agendamento">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Cirurgia" />
+                              <MenuItem mnemonicParsing="false" text="Exame" />
+                              <MenuItem fx:id="menuitem_novoagendamento_consulta" mnemonicParsing="false" onAction="#handlerNovoAgendamento_Consulta" text="Consulta" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Gestão de Acesso">
+                  <items>
+                    <MenuItem fx:id="menuitem_novousuario" mnemonicParsing="false" onAction="#handlerNovoUsuario" text="Novo Usuário" />
+                  </items>
+                </Menu>
+                  <Menu fx:id="menu_clinica" mnemonicParsing="false" text="Clínica">
+                    <items>
+                      <MenuItem fx:id="menuitem_painelatendimentos" mnemonicParsing="false" onAction="#handlerPainelAtendimentos" text="Painel de Atendimentos" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_farmacia" mnemonicParsing="false" text="Farmácia" visible="false">
+                    <items>
+                      <MenuItem fx:id="menuitem_farmaco_painel" mnemonicParsing="false" onAction="#handlerFarmaco" text="Painel" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_laboratorio" mnemonicParsing="false" text="Laboratório">
+                    <items>
+                      <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                  </Menu>
+                  <Menu fx:id="menu_sair" mnemonicParsing="false" text="Sair">
+                     <items>
+                        <MenuItem fx:id="menuitem_sair" mnemonicParsing="false" onAction="#sair" text="Sair" />
+                     </items>
+                  </Menu>
+              </menus>
+            </MenuBar>
+            <AnchorPane fx:id="anchorpane_main" maxHeight="690.0" maxWidth="1200.0" minHeight="690.0" minWidth="1200.0" prefHeight="690.0" prefWidth="1200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <children>
+                  <ImageView fitHeight="109.0" fitWidth="136.0" layoutX="1030.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@qms_v2_h_rgb.png" />
+                     </image>
+                  </ImageView>
+               </children></AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
