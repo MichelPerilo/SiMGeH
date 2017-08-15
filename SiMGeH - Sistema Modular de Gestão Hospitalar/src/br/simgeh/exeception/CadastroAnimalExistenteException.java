@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.simgeh.data;
+package br.simgeh.exeception;
 
 /**
  *
- * @author Elal
+ * @author Michel Perilo
  */
-public class RepositorioRequsicoes {
+public class CadastroAnimalExistenteException extends Exception {
     
 }

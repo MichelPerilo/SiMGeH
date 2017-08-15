@@ -50,7 +50,7 @@ public class Vbox_LogonController implements Initializable {
     @FXML 
     private ComboBox<String> acctTypeCbbx;
     
-    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Recepcionista", "Técnico Laboratorial", "Mèdico");
+    ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
     
     
     @Override

@@ -5,8 +5,8 @@
  */
 package br.simgeh.data;
 
-import br.simgeh.exeception.CREException;
-import br.simgeh.exeception.PRIException;
+import br.simgeh.exeception.CadastroRequisicaoExistenteException;
+import br.simgeh.exeception.ProcuraRequisicaoInexistenteException;
 import br.simgeh.model.Requisicao;
 import java.io.IOException;
 
@@ -16,10 +16,12 @@ import java.io.IOException;
  */
 public interface IRepositorioRequisicoes {
     
-    public void cadastra(Requisicao r)  throws IOException, CREException; //Cadastro de Requisição já Existente
-    public Requisicao procurar(String nome) throws PRIException; // Procurar uma Requisiçõa não Existente
-    public boolean existe(String nome);
-    public void remover (String nome)  throws IOException, PRIException; // //
-    public void  exibeRequisicao() throws IOException;
+    public void cadastra(Requisicao r)  throws IOException, CadastroRequisicaoExistenteException; //Cadastro de Requisição já Existente
+    public Requisicao procurar(int id) throws ProcuraRequisicaoInexistenteException; // Procurar uma Requisiçõa não Existente
+    public boolean existe(int id);
+    public void remover (int id)  throws IOException, ProcuraRequisicaoInexistenteException;
+    public void exibeListaReq() throws IOException;
+    public void exibeReq(int id) throws IOException , ProcuraRequisicaoInexistenteException;
+    public void atualizar(int id, int status) throws IOException, ProcuraRequisicaoInexistenteException;
     
 }

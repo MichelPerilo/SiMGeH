@@ -9,7 +9,6 @@ package br.simgeh.model;
  *
  * @author Bartô
  */
-      
 public class Tutor {
 
 	private String nome;
@@ -72,5 +71,5 @@ public class Tutor {
 		else
 			return false;
 	}
-	
+
 }

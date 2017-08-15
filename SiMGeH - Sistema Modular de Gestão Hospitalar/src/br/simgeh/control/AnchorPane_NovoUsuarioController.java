@@ -7,7 +7,11 @@ package br.simgeh.control;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.ComboBox;
 import javafx.stage.Stage;
 
 /**
@@ -20,13 +24,17 @@ public class AnchorPane_NovoUsuarioController implements Initializable {
     /**
      * Initializes the controller class.
      */
+    @FXML 
+    //private ComboBox<String> acctTypeCbbx;
+    
+    //ObservableList<String> listAccts_Type = FXCollections.observableArrayList("Administrador", "Recepcionista", "Técnico Laboratorial", "Médico");
     
     
     private Stage stage;
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+       //acctTypeCbbx.setItems(listAccts_Type);
     }    
 
     /**

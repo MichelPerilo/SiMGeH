@@ -9,10 +9,10 @@ package br.simgeh.exeception;
  *
  * @author Elal
  */
-public class CREException extends Exception{
+public class CadastroRequisicaoExistenteException extends Exception{
     
     private String nome;
-    public CREException(String nome){
+    public CadastroRequisicaoExistenteException(String nome){
 		
 	super(nome + " JA ESTA CADASTRADA!!!");
 	this.setNome(nome);

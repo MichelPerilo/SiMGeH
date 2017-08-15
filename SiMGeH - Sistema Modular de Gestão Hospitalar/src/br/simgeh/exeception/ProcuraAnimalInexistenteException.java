@@ -7,14 +7,8 @@ package br.simgeh.exeception;
 
 /**
  *
- * @author Elal
+ * @author Michel Perilo
  */
-public class PRIException extends Exception{
-    
-    public PRIException(){
-		
-		super("REQUISIÇÃO NAO EXISTENTE!!!");
-		
-	}
+public class ProcuraAnimalInexistenteException extends Exception {
     
 }

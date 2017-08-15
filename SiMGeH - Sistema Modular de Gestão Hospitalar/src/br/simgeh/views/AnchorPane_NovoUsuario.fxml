@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="900.0" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoUsuarioController">
+<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="900.0" prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoUsuarioController">
    <children>
       <Button layoutX="366.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
       <Button layoutX="440.0" layoutY="421.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" />
@@ -50,7 +50,7 @@
       <TextField layoutX="186.0" layoutY="135.0" prefHeight="25.0" prefWidth="160.0" />
       <TextField layoutX="422.0" layoutY="135.0" prefHeight="25.0" prefWidth="160.0" />
       <Label layoutX="370.0" layoutY="138.0" text="Senha:" />
-      <ChoiceBox layoutX="619.0" layoutY="134.0" prefHeight="25.0" prefWidth="119.0" />
+      <ChoiceBox fx:id="acctTypeCbbx" layoutX="619.0" layoutY="134.0" prefHeight="25.0" prefWidth="119.0" />
       <Label layoutX="620.0" layoutY="117.0" text="Tipo:" />
       <TextField layoutX="460.0" layoutY="249.0" prefHeight="25.0" prefWidth="160.0" />
       <Label layoutX="697.0" layoutY="290.0" text="Número:" />
