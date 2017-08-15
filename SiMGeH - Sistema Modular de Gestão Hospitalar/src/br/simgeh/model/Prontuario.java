@@ -23,12 +23,12 @@ public class Prontuario {
         this.animal = animal;
     }
 
+	public Animal getAnimal() {
+		return this.animal;
+	}
+
     /**
      * @return the animal
-     */
-    public Animal getAnimal() {
-        return animal;
-    }
 
     /**
      * @param animal the animal to set
@@ -36,6 +36,7 @@ public class Prontuario {
     public void setAnimal(Animal animal) {
         this.animal = animal;
     }
+     
     
 
     
