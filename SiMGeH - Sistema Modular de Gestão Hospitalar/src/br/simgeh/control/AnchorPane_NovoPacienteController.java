@@ -11,13 +11,26 @@ import br.simgeh.exeception.CadastroProntuarioExistenteException;
 import br.simgeh.exeception.CadastroTutorExistenteException;
 import java.io.IOException;
 import java.net.URL;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Optional;
 import java.util.ResourceBundle;
+import javafx.scene.control.ToggleButton;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
@@ -27,9 +40,24 @@ import javafx.stage.Stage;
  */
 public class AnchorPane_NovoPacienteController implements Initializable {
 
-  
+    private Stage stage; 
+    @FXML 
+    private ComboBox<String> especieCbbx;
+    @FXML 
+    private ComboBox<String> cidadeCbbx;
+    @FXML
+    private ToggleButton rdBtnSexM = new RadioButton();
+    @FXML
+    private ToggleButton rdBtnSexF = new RadioButton();
+    @FXML 
+    private TextField dtaAtualLbl;
     
-    private Stage stage;
+            
+    private ObservableList<String> listCidadeCbbx = FXCollections.observableArrayList("Recife", "Olinda", "Jaboatão", "Itapissuma");
+    private ObservableList<String> listEspecieCbbx = FXCollections.observableArrayList("Gato", "Cachorro");
+    private Calendar dtaAtual = Calendar.getInstance();
+    SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
+	String a = s.format(dtaAtual.getTime());
     
     @FXML
     private TextField txtfld_nome;
@@ -42,12 +70,23 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     @FXML
     private Button btn_gerarregistro;
     
- 
+    Integer i=1;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        especieCbbx.setItems(listEspecieCbbx);
+        cidadeCbbx.setItems(listCidadeCbbx);
+        dtaAtualLbl.setText(a);
+        dtaAtualLbl.setDisable(true); //desativa o text field para ser somente leitura.
+        
+        if(rdBtnSexF.isSelected()) {
+            rdBtnSexM.setVisible(false);
+        }    
+        else if(rdBtnSexM.isSelected()) {
+        	rdBtnSexF.setVisible(false);
+        }
+        	
     }    
 
     /**
@@ -68,7 +107,8 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     private void handlerGerarRegistro(){
        
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
-        String id = "1";
+         i++;
+        String id = i.toString();
         String especie = "dog";
         String nome = this.txtfld_nome.getText();
         String sexo = "masc";
@@ -84,7 +124,7 @@ public class AnchorPane_NovoPacienteController implements Initializable {
         String bairro = "Ipsep";
         String logradouro = "Rua Manoel Medeiros";
         int numero = 225;
-   
+        
    
   
         try {
@@ -99,10 +139,28 @@ public class AnchorPane_NovoPacienteController implements Initializable {
             Logger.getLogger(AnchorPane_NovoPacienteController.class.getName()).log(Level.SEVERE, null, ex);
         } catch (CadastroTutorExistenteException ex) {
             Logger.getLogger(AnchorPane_NovoPacienteController.class.getName()).log(Level.SEVERE, null, ex);
+        }finally{
+            handlerConfirmacao();
+             
         }
 
-        System.out.println("CADASTRO REALIZADO");
+      
+        
    }
    
+    private void handlerConfirmacao(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    	alert.setHeaderText("NOVO PACIENTE CADASTRADO COM SUCESSO");
+        alert.setTitle("Paciente Cadastrado");
+    	
+    	Optional<ButtonType> result = alert.showAndWait();
+    	if (result.get() == ButtonType.OK){
+    	    // ... user chose OK
+    		stage.close();
+    		
+    	} else {
+    	    // ... user chose CANCEL or closed the dialog
+    	}
+    }
     
 }

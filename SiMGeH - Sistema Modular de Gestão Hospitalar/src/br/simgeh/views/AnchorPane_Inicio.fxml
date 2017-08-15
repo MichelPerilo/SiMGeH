@@ -18,10 +18,20 @@
               <menus>
                 <Menu fx:id="menu_agendamento" mnemonicParsing="false" text="Recepção">
                   <items>
-                    <MenuItem fx:id="menuitem_novopaciente" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo Paciente" />
-                        <MenuItem mnemonicParsing="false" onAction="#handlerBuscarPaciente" text="Buscar Paciente" />
+                        <Menu mnemonicParsing="false" text="Paciente">
+                          <items>
+                          <MenuItem fx:id="menuitem_novopaciente" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo Paciente" />
+                              <MenuItem mnemonicParsing="false" onAction="#handlerBuscarPaciente" text="Buscar Paciente" />
+                          </items>
+                        </Menu>
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Agenda" />
+                        <Menu mnemonicParsing="false" text="Agendamento">
+                          <items>
+                              <MenuItem mnemonicParsing="false" text="Cirurgia" />
+                              <MenuItem mnemonicParsing="false" text="Exame" />
+                              <MenuItem fx:id="menuitem_novoagendamento_consulta" mnemonicParsing="false" onAction="#handlerNovoAgendamento_Consulta" text="Consulta" />
+                          </items>
+                        </Menu>
                   </items>
                 </Menu>
                 <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Gestão de Acesso">
