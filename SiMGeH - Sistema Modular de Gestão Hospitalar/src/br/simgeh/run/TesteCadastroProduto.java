@@ -23,7 +23,7 @@ public class TesteCadastroProduto {
 		int escolha;
 		int cont = 0;
 		String nome;
-		      IGerenciadorProduto fachada = ControladorProduto.getInstance();
+		IGerenciadorProduto fachada = ControladorProduto.getInstance();
 
 		Scanner ler = new Scanner(System.in);
 

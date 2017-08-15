@@ -65,6 +65,12 @@ public class AnchorPane_InicioController implements Initializable {
     private MenuItem menuitem_novousuario;
     @FXML
     private MenuItem menuitem_novopaciente;
+    @FXML
+    private MenuItem menuitem_painelatendimentos;
+    @FXML
+    private MenuItem menuitem_farmaco_painel;
+    @FXML
+    private MenuItem menuitem_novoagendamento;
     
     
     @Override
@@ -76,9 +82,7 @@ public class AnchorPane_InicioController implements Initializable {
         }
     }
    
-    /**
-     * @author Bartoh
-     */
+    
     @FXML
     public void sair() throws IOException {
     	Alert alert = new Alert(AlertType.CONFIRMATION);
@@ -119,6 +123,29 @@ public class AnchorPane_InicioController implements Initializable {
         novoPacienteStage.showAndWait();
     }
     
+    @FXML
+    public void handlerNovoAgendamento() throws IOException{
+        showAnchorPane_NovoAgendamento();
+    }
+    
+    public void showAnchorPane_NovoAgendamento() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AnchorPane_NovoAgendamentoController.class.getResource("../views/AnchorPane_NovoAgendamento.fxml"));
+        AnchorPane page = (AnchorPane) loader.load();
+        
+        Stage novoAgendamentoStage = new Stage();
+        novoAgendamentoStage.setTitle("Novo Agendamento");
+        Scene scene = new Scene(page);
+        novoAgendamentoStage.setScene(scene);
+        novoAgendamentoStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
+        novoAgendamentoStage.setResizable(false);
+        
+        AnchorPane_NovoAgendamentoController controller = loader.getController();
+        controller.setStage(novoAgendamentoStage);
+        
+        novoAgendamentoStage.showAndWait();
+    }
+    
     
     public void handlerInicio() throws IOException{
         menu_agendamento.setVisible(true);
@@ -133,6 +160,16 @@ public class AnchorPane_InicioController implements Initializable {
     public void handlerBuscarPaciente() throws IOException{
         AnchorPane anchorpane_iniciar = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Pacientes.fxml"));
         anchorpane_main.getChildren().setAll(anchorpane_iniciar);
+    }
+    @FXML
+    public void handlerPainelAtendimentos() throws IOException{
+        AnchorPane anchorpane_painel_medico = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_PainelAtendimentos.fxml"));
+       anchorpane_main.getChildren().setAll(anchorpane_painel_medico);
+    }
+    @FXML
+    public void handlerFarmaco() throws IOException{
+        AnchorPane anchorpane_farmaco = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Farmaco.fxml"));
+       anchorpane_main.getChildren().setAll(anchorpane_farmaco);
     }
 
     @FXML
