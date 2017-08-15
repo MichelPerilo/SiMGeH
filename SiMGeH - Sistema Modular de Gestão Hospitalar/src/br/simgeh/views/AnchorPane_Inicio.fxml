@@ -21,7 +21,7 @@
                     <MenuItem fx:id="menuitem_novopaciente" mnemonicParsing="false" onAction="#handlerNovoPaciente" text="Novo Paciente" />
                         <MenuItem mnemonicParsing="false" onAction="#handlerBuscarPaciente" text="Buscar Paciente" />
                         <SeparatorMenuItem mnemonicParsing="false" />
-                        <MenuItem mnemonicParsing="false" text="Agenda" />
+                        <MenuItem fx:id="menuitem_novoagendamento" mnemonicParsing="false" onAction="#handlerNovoAgendamento" text="Novo Agendamento" />
                   </items>
                 </Menu>
                 <Menu fx:id="menu_administracao" mnemonicParsing="false" text="Gestão de Acesso">
