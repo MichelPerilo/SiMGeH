@@ -68,6 +68,8 @@ public class AnchorPane_InicioController implements Initializable {
     private MenuItem menuitem_painelatendimentos;
     @FXML
     private MenuItem menuitem_farmaco_painel;
+    @FXML
+    private MenuItem menuitem_novoagendamento;
     
     
     @Override
@@ -117,6 +119,29 @@ public class AnchorPane_InicioController implements Initializable {
         controller.setStage(novoPacienteStage);
         
         novoPacienteStage.showAndWait();
+    }
+    
+    @FXML
+    public void handlerNovoAgendamento() throws IOException{
+        showAnchorPane_NovoAgendamento();
+    }
+    
+    public void showAnchorPane_NovoAgendamento() throws IOException{
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(AnchorPane_NovoAgendamentoController.class.getResource("../views/AnchorPane_NovoAgendamento.fxml"));
+        AnchorPane page = (AnchorPane) loader.load();
+        
+        Stage novoAgendamentoStage = new Stage();
+        novoAgendamentoStage.setTitle("Novo Agendamento");
+        Scene scene = new Scene(page);
+        novoAgendamentoStage.setScene(scene);
+        novoAgendamentoStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
+        novoAgendamentoStage.setResizable(false);
+        
+        AnchorPane_NovoAgendamentoController controller = loader.getController();
+        controller.setStage(novoAgendamentoStage);
+        
+        novoAgendamentoStage.showAndWait();
     }
     
     
