@@ -6,6 +6,7 @@ import br.simgeh.exeception.CadastroAnimalExistenteException;
 import br.simgeh.exeception.ProcuraAnimalInexistenteException;
 import br.simgeh.model.Animal;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -42,6 +43,10 @@ public class CadastroAnimal_A {
 		this.repositorio.imprimiAnimal();
 	}
 
+        public ArrayList<Animal> allAnimals(){
+            return this.repositorio.allAnimals();
+        }
+        
 	public Animal acharAnimal(String cpf, String nome)
 			throws ProcuraAnimalInexistenteException {
 

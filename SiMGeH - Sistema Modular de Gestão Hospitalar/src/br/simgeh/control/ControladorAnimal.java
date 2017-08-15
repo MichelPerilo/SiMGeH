@@ -1,5 +1,7 @@
 package br.simgeh.control;
 
+import java.util.Random;
+
 import br.simgeh.data.IRepositorioAnimal;
 import br.simgeh.data.RepositorioAnimalArrayList;
 import br.simgeh.exeception.PacienteJahCadastradoException;
@@ -32,6 +34,16 @@ public class ControladorAnimal {
 		}
 		
 		this.repositorio.cadastrar(a);
+	}
+	
+	public Integer genID() {
+		Random gen = new Random();
+		Integer n = gen.nextInt(999999);
+		while(n==0)				//soh sai do laco se n for um número diferente de 0.
+			if(n==0)
+				n = gen.nextInt(999999);
+		
+		return n;
 	}
 
 }

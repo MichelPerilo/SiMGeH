@@ -15,5 +15,25 @@ public class Endereco {
     private String logradouro;
     private int numero;
     
+    public Endereco(String cidade, String bairro, String logradouro, int numero){
+        this.cidade = cidade;
+        this.bairro = bairro;
+        this.logradouro = logradouro;
+        this.numero = numero;
+    }
+
+    /**
+     * @return the numero
+     */
+    public int getNumero() {
+        return numero;
+    }
+
+    /**
+     * @param numero the numero to set
+     */
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
     
 }

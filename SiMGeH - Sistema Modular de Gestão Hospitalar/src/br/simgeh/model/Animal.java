@@ -5,6 +5,8 @@
  */
 package br.simgeh.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Bartô
@@ -20,6 +22,7 @@ public class Animal {
     private String porte;
     private String pelagem;
     private Tutor tutor;
+    private Date criacao;
     
     
 
@@ -115,14 +118,16 @@ public class Animal {
         this.tutor = tutor;
     }
     
-    public String getCPFTutor() {
-    	return this.getTutor().getCpf();
-    }
-    
     public boolean equals(Animal a) {
     	if(this.getId().equals(a.getId()))
     		return true;
     	
     	return false;
+    }
+    
+    public String toString(){
+        String animal;
+        animal = "Ficha nº: " + this.id + " - " + "Nome: " + this.nome + " - " + "Tutor: " + this.tutor.getNome();
+        return animal;
     }
 }
