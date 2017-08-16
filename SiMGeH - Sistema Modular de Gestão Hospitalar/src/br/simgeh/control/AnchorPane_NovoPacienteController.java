@@ -5,6 +5,10 @@
  */
 package br.simgeh.control;
 
+import br.simgeh.exeception.CadastroAnimalExistenteException;
+import br.simgeh.exeception.CadastroEnderecoExistenteException;
+import br.simgeh.exeception.CadastroProntuarioExistenteException;
+import br.simgeh.exeception.CadastroTutorExistenteException;
 import java.io.IOException;
 import java.net.URL;
 import java.text.SimpleDateFormat;
@@ -21,6 +25,8 @@ import br.simgeh.exeception.CadastroTutorExistenteException;
 import br.simgeh.resources.TextFieldFormatter;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
@@ -28,6 +34,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
+import javafx.scene.control.ButtonType;
+import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 /**
