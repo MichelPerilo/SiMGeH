@@ -22,10 +22,10 @@ import java.util.ArrayList;
  * @author Michel Perilo
  */
 public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
-    
-        private Animal[] animal;
-        private int proxima;
-        private static RepositorioAnimal_A instance;
+
+	private Animal[] animal;
+	private int proxima;
+	private static RepositorioAnimal_A instance;
 
 	// contrutor
 	private RepositorioAnimal_A(int tamanho) {
@@ -39,9 +39,15 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 
 	public static IRepositorioAnimal_A getInstance() throws IOException {
 		if (instance == null) {
-		    instance = abrirArquivo();
+			instance = abrirArquivo();
 		}
-		return (IRepositorioAnimal_A) instance;
+		return instance;
+	}
+
+
+
+	public Animal[] getAnimal() {
+		return animal;
 	}
 
 	private static RepositorioAnimal_A abrirArquivo() throws IOException {
@@ -54,12 +60,12 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 			fis = new FileInputStream(in);
 			ois = new ObjectInputStream(fis);
 			Object o = ois.readObject();
-                        
+
 			instanciaLocal = (RepositorioAnimal_A) o;
 		} catch (IOException | ClassNotFoundException e) {
-			
+
 			instanciaLocal = new RepositorioAnimal_A(100);
-			
+
 		} finally {
 
 			if (ois != null) {
@@ -81,10 +87,10 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 		}
 
 		File dir;
-                dir = new File("ARQUIVOS\\CADASTRO DE ANIMAIS");
+		dir = new File("ARQUIVOS\\CADASTRO DE ANIMAIS");
 		dir.mkdirs();
 		File out = new File(dir,"cadastroanimal.bin");
-        
+		
 		if (!out.exists()){			
 			out.createNewFile();
                 }
@@ -108,24 +114,23 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 		}
 	}
 
-	public void cadastra(Animal a) throws IOException,
-			CadastroAnimalExistenteException{
+	public void cadastra(Animal a) throws IOException, CadastroAnimalExistenteException{
 
-	    	if (a != null)
-				if (this.existe(a.getTutor().getCpf(), a.getNome())) {
-				throw new CadastroAnimalExistenteException(
-							);                                    
-                                }else{
-					this.animal[proxima] = a;
-					this.proxima = this.proxima + 1;
-				}
-			if (this.proxima == this.animal.length) {
-
-				this.duplicaArrayCliente();
+		if (a != null)
+			if (this.existe(a.getTutor().getCpf(), a.getNome())) {
+				throw new CadastroAnimalExistenteException();
+			} else {
+				this.animal[proxima] = a;
+				this.proxima = this.proxima + 1;
 			}
-			salvarArquivo();
-		
+		if (this.proxima == this.animal.length) {
+
+			this.duplicaArrayCliente();
+		}
+		salvarArquivo();
+
 	}
+
 
 	public Animal procurar(String cpf, String nome)	throws ProcuraAnimalInexistenteException {
 
@@ -134,15 +139,13 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 		if (i != this.proxima)
 			resultado = this.animal[i];
 		else throw new ProcuraAnimalInexistenteException(); 
-		
-		
-		
+
+
+
 
 		return  resultado;
 
 	}
-	
-
 
 	public boolean existe(String cpf, String nome) {
 
@@ -165,7 +168,7 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 			this.animal[this.proxima - 1] = null;
 			this.proxima = this.proxima - 1;
 		}else throw new ProcuraAnimalInexistenteException(); 
-		
+
 		salvarArquivo();
 
 	}
@@ -186,53 +189,58 @@ public class RepositorioAnimal_A implements IRepositorioAnimal_A, Serializable{
 			}
 
 		}
-	
+
 		return i;
 	}
-        
-        public ArrayList<Animal> allAnimals(){
-            ArrayList<Animal> animais = new ArrayList<Animal>();
-            for (int i =0; i < animal.length; i++){
-                if (animal[i] != null){
-                    animais.add(animal[i]);
-                }
-            }
-            
-            return animais;
-        }
-        
-        public ArrayList<Animal> animaisporCPF(String cpf){
-            ArrayList<Animal> animais = new ArrayList<Animal>();
-            for (int i =0; i < animal.length; i++){
-                if (animal[i] != null && cpf == animal[i].getTutor().getCpf()){
-                    animais.add(animal[i]);
-                }
-            }
-            return animais;
-        }
-        
-        
+
+	public  ArrayList<Animal> allAnimals() throws IOException{
+		ArrayList<Animal> animais = new ArrayList<Animal>();
+		//abrindo o arquivo e capturando a instância com o array de animal
+		RepositorioAnimal_A instanciaLocal = abrirArquivo();
+		Animal[] animal = instanciaLocal.getAnimal();
+
+		for (int i =0; i < animal.length; i++){
+			if (animal[i] != null){
+				animais.add(animal[i]);
+			}
+		}
+
+		return animais;
+	}
+
+	public ArrayList<Animal> animaisporCPF(String cpf){
+		ArrayList<Animal> animais = new ArrayList<Animal>();
+		for (int i =0; i < animal.length; i++){
+			if (animal[i] != null && cpf == animal[i].getTutor().getCpf()){
+				animais.add(animal[i]);
+			}
+		}
+		return animais;
+	}
+
+
 
 	private void duplicaArrayCliente() {
 
 		if (this.animal != null && this.animal.length > 0) {
 			Animal[] arrayDuplicado = new Animal[this.animal.length * 2];
-                    System.arraycopy(this.animal, 0, arrayDuplicado, 0, this.animal.length);
+			System.arraycopy(this.animal, 0, arrayDuplicado, 0, this.animal.length);
 
 			this.animal = arrayDuplicado;
 		}
 	}
 
 	public void  imprimiAnimal() throws IOException{
-            
-            for (int aux = 0;aux < animal.length;aux++ ) {
-                if(animal[aux]!= null){
-                System.out.println(animal[aux].toString());
-                }
-            }
-            
+		RepositorioAnimal_A instanciaLocal = abrirArquivo();
+		Animal[] animal = instanciaLocal.getAnimal(); 
+		
+		for (int i = 0; i < animal.length; i++) {
+			if(animal[i]!= null){
+				System.out.println(animal[i].toString());
+			}
+		}
+
 
 	}
-	
-	
+
 }

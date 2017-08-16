@@ -7,7 +7,6 @@ import br.simgeh.exeception.CadatroProdutoExistenteExeception;
 import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
 import br.simgeh.model.Produto;
 import java.io.IOException;
-import java.util.List;
 
 /**
  *
@@ -39,9 +38,9 @@ public class CadastroProduto {
 
 	}
 
-	public List<Produto> exibiProduto() throws IOException {
+	public void exibiProduto() throws IOException {
 
-            return this.repositorio.imprimiProduto();
+		this.repositorio.imprimiProduto();
 	}
 
 	public Produto acharProduto(String nome)

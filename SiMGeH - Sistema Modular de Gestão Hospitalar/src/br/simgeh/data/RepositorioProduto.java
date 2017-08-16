@@ -10,9 +10,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  *
  * @author Raylison
@@ -199,16 +196,14 @@ public class RepositorioProduto implements IRepositorioProduto, Serializable{
 		}
 	}
 
-       
-	public List<Produto>  imprimiProduto() throws IOException{
+	public void  imprimiProduto() throws IOException{
             
-            List<Produto> p = new ArrayList();
-            for (int aux = 0 ; aux < produto.length; aux ++) {
-                if (produto[aux] != null) {
-                    p.add(produto[aux]);
+            for (int aux = 0;aux < produto.length;aux++ ) {
+                if(produto[aux]!= null){
+                System.out.println(produto[aux].toString());
                 }
             }
-            return p;     
+            
 
 	}
 	

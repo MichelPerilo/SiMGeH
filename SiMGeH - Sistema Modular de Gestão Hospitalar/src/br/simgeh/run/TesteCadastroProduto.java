@@ -1,7 +1,7 @@
 package br.simgeh.run;
 
 
-import br.simgeh.control.ControladorFarmaco;
+import br.simgeh.control.ControladorProduto;
 import br.simgeh.control.IGerenciadorProduto;
 import br.simgeh.exeception.CadatroProdutoExistenteExeception;
 import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
@@ -23,7 +23,7 @@ public class TesteCadastroProduto {
 		int escolha;
 		int cont = 0;
 		String nome;
-		IGerenciadorProduto fachada = ControladorFarmaco.getInstance();
+		IGerenciadorProduto fachada = ControladorProduto.getInstance();
 
 		Scanner ler = new Scanner(System.in);
 

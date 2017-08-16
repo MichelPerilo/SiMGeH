@@ -23,4 +23,7 @@ public interface IGerenciadorAnimal_A {
             CadastroAnimalExistenteException, CadastroProntuarioExistenteException, CadastroEnderecoExistenteException, CadastroTutorExistenteException;
     
     public ArrayList<Animal> allAnimals();
+    
+    public void  imprimiAnimal() throws IOException;
 }
+

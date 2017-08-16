@@ -7,30 +7,11 @@ package br.simgeh.model;
 
 /**
  *
- * @author Michel Perilo
+ * @author miche
  */
 public abstract class Servico {
     private int protuario_id;
-    private Medico medico; 
-    
-
-    public Servico(){
-        
-    }
-    
-
-    /**
-     * @return the protuario_id
-     */
-    public int getProtuario_id() {
-        return protuario_id;
-    }
-
-    /**
-     * @param protuario_id the protuario_id to set
-     */
-    public void setProtuario_id(int protuario_id) {
-        this.protuario_id = protuario_id;
-    }
+    private Medico medico;
+    private Animal animal;
     
 }

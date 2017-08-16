@@ -5,8 +5,6 @@
  */
 package br.simgeh.model;
 
-import java.util.Date;
-
 
 /**
  *
@@ -19,11 +17,8 @@ public class Agendamento {
     private Servico servico;
     
     
-    public Agendamento(int prontuario_id, String data, String hora, Servico servico ){
-        this.prontuario_id = prontuario_id;
-        this.data = data;
-        this.hora = hora;
-        this.servico = servico;
+    public Agendamento(){
+        
     }
 
     /**
@@ -53,36 +48,6 @@ public class Agendamento {
     public void setHora(String hora) {
         this.hora = hora;
     }
-
-    /**
-     * @return the servico
-     */
-    public Servico getServico() {
-        return servico;
-    }
-
-    /**
-     * @param servico the servico to set
-     */
-    public void setServico(Servico servico) {
-        this.servico = servico;
-    }
-
-    /**
-     * @return the prontuario_id
-     */
-    public int getProntuario_id() {
-        return prontuario_id;
-    }
-
-    /**
-     * @param prontuario_id the prontuario_id to set
-     */
-    public void setProntuario_id(int prontuario_id) {
-        this.prontuario_id = prontuario_id;
-    }
-
-    
    
      /**
      * @return the medico

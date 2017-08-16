@@ -17,7 +17,7 @@ import javafx.stage.Stage;
 /**
  * FXML Controller class
  *
- * @author Michel Perilo 
+ * @author miche
  */
 public class AnchorPane_NovoUsuarioController implements Initializable {
 
