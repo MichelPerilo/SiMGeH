@@ -121,13 +121,13 @@ public class AnchorPane_FarmacoController implements Initializable {
           textFieldTipo.setText(p.getTipo());
           textFieldDescricao.setText(p.getDescricao());
        
-          textFieldID.setEditable(false);
-          textFieldNome.setEditable(false);
-          textFieldQTD.setEditable(false);
-          textFieldTipo.setEditable(false);
-          textFieldDescricao.setEditable(false);
+//          textFieldID.setEditable(false);
+//          textFieldNome.setEditable(false);
+//          textFieldQTD.setEditable(false);
+//          textFieldTipo.setEditable(false);
+//          textFieldDescricao.setEditable(false);
        
-          textFieldBusca.setText("");
+//          textFieldBusca.setText("");
           
 
 	} catch (ProcuraProdutoInexistenteExeception ppi) {
@@ -244,7 +244,8 @@ public class AnchorPane_FarmacoController implements Initializable {
     }
     
     public void showAnchorPane_SelectIntem(Produto p) throws IOException{
-          
+         
+        System.out.println(p);
         FXMLLoader loader = new FXMLLoader();        
         loader.setLocation(SelectProdutoController.class.getResource("../views/SelectProduto.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
@@ -256,9 +257,17 @@ public class AnchorPane_FarmacoController implements Initializable {
         produtoSelect.setResizable(false);
         
         SelectProdutoController controller = loader.getController();
-        controller.setProduto(p);
+        
+        controller.setTXDescricao(p.getDescricao());
+        controller.setTXNome(p.getNome());
+        controller.setTXdata(p.getDataFormatada());
+        controller.setTXTipo(p.getTipo());
+        controller.setTXID(Integer.toString(p.getId()));
+        controller.setTXQTD(Integer.toString(p.getQtd()));
+       
         controller.setStage(produtoSelect);       
         produtoSelect.showAndWait();
+        
         
         
     }  
