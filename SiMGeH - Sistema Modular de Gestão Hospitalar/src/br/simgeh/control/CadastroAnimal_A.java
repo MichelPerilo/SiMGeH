@@ -1,14 +1,12 @@
 package br.simgeh.control;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Random;
-
 import br.simgeh.data.IRepositorioAnimal_A;
 import br.simgeh.data.RepositorioAnimal_A;
 import br.simgeh.exeception.CadastroAnimalExistenteException;
 import br.simgeh.exeception.ProcuraAnimalInexistenteException;
 import br.simgeh.model.Animal;
+import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  *
@@ -55,5 +53,4 @@ public class CadastroAnimal_A {
 		Animal a = this.repositorio.procurar(cpf, nome);
 		return a;
 	}
-	
 }

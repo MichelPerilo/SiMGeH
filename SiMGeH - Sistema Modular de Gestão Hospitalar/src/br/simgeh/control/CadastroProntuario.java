@@ -26,16 +26,21 @@ public class CadastroProntuario {
 		try {
 			this.repositorio = RepositorioProntuario.getInstance();
 		} catch (IOException e) {
-        }
+                }
 
 	}
 
-	public void cadatrar(Prontuario p) throws IOException, CadastroProntuarioExistenteException {
+	public void cadatrar(Prontuario p) throws IOException,
+			CadastroProntuarioExistenteException {
 		this.repositorio.cadastra(p);
+
 	}
 
-	public void descadatrar(Animal a) throws IOException, ProcuraProntuarioInexistenteException {
+	public void descadatrar(Animal a) throws IOException,
+			ProcuraProntuarioInexistenteException {
+
 		this.repositorio.remover(a);
+
 	}
 
 	public void exibiProntuario() throws IOException {
