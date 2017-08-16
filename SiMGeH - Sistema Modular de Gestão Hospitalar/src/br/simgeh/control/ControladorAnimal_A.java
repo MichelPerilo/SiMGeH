@@ -15,6 +15,7 @@ import br.simgeh.model.Prontuario;
 import br.simgeh.model.Tutor;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -53,4 +54,5 @@ public class ControladorAnimal_A implements IGerenciadorAnimal_A{
     public ArrayList<Animal> allAnimals(){
         return this.animal.allAnimals();
     }
+
 }

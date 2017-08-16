@@ -69,7 +69,7 @@ public class AnchorPane_InicioController implements Initializable {
     @FXML
     private MenuItem menuitem_farmaco_painel;
     @FXML
-    private MenuItem menuitem_novoagendamento;
+    private MenuItem menuitem_novoagendamento_consulta;
     
     
     @Override
@@ -106,39 +106,39 @@ public class AnchorPane_InicioController implements Initializable {
     public void showAnchorPane_NovoPaciente() throws IOException{
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(AnchorPane_NovoPacienteController.class.getResource("../views/AnchorPane_NovoPaciente.fxml"));
-        AnchorPane page = (AnchorPane) loader.load(); //carrega uma instância de AnchorPane
+        AnchorPane page = (AnchorPane) loader.load();
         
-        Stage newPatientStg = new Stage();
-        newPatientStg.setTitle("Novo Paciente");
+        Stage novoPacienteStage = new Stage();
+        novoPacienteStage.setTitle("Novo Paciente");
         Scene scene = new Scene(page);
-        newPatientStg.setScene(scene);
-        newPatientStg.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
-        newPatientStg.setResizable(false);
+        novoPacienteStage.setScene(scene);
+        novoPacienteStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
+        novoPacienteStage.setResizable(false);
         
         AnchorPane_NovoPacienteController controller = loader.getController();
-        controller.setStage(newPatientStg);
+        controller.setStage(novoPacienteStage);
         
-        newPatientStg.showAndWait();
+        novoPacienteStage.showAndWait();
     }
     
     @FXML
-    public void handlerNovoAgendamento() throws IOException{
-        showAnchorPane_NovoAgendamento();
+    public void handlerNovoAgendamento_Consulta() throws IOException{
+        showAnchorPane_NovoAgendamento_Consulta();
     }
     
-    public void showAnchorPane_NovoAgendamento() throws IOException{
+    public void showAnchorPane_NovoAgendamento_Consulta() throws IOException{
         FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(AnchorPane_NovoAgendamentoController.class.getResource("../views/AnchorPane_NovoAgendamento.fxml"));
+        loader.setLocation(AnchorPane_NovoAgendamento_ConsultaController.class.getResource("../views/AnchorPane_NovoAgendamento_Consulta.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
         
         Stage novoAgendamentoStage = new Stage();
-        novoAgendamentoStage.setTitle("Novo Agendamento");
+        novoAgendamentoStage.setTitle("Nova Consulta");
         Scene scene = new Scene(page);
         novoAgendamentoStage.setScene(scene);
         novoAgendamentoStage.getIcons().add(new Image(getClass().getResourceAsStream("qms_v2_h_rgb.png")));
         novoAgendamentoStage.setResizable(false);
         
-        AnchorPane_NovoAgendamentoController controller = loader.getController();
+        AnchorPane_NovoAgendamento_ConsultaController controller = loader.getController();
         controller.setStage(novoAgendamentoStage);
         
         novoAgendamentoStage.showAndWait();

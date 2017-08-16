@@ -5,13 +5,21 @@
  */
 package br.simgeh.control;
 
+import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
-import javafx.event.ActionEvent;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import org.controlsfx.control.textfield.TextFields;
 
@@ -22,31 +30,43 @@ import org.controlsfx.control.textfield.TextFields;
  *
  * @author Michel Perilo
  */
-public class AnchorPane_NovoAgendamentoController implements Initializable {
+public class AnchorPane_NovoAgendamento_ConsultaController implements Initializable {
 
-    
     @FXML
     private TextField input;
-    @FXML
+    
+    
     private Stage stage;
     
     /**
      * Initializes the controller class.
      */
     @Override
+    @FXML
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        inicia();
+        
+            // TODO
+            inicia();
+            
+            
+        
     }    
-    
+    @FXML
     public void inicia(){
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
         fachada.allAnimals();
-        TextField.bindAutoCompletion(input, fachada.allAnimals());
-        
-        
+        TextFields.bindAutoCompletion(input, fachada.allAnimals());
+        /*String[] servicos = {"Consullta", "Cirurgia", "Exame"};
+        ObservableList<String> items =FXCollections.observableArrayList (servicos);
+        chbox_servico.setItems(items);
+        */
+          
     }
+    
+   
 
+    
+    
     /**
      * @return the stage
      */
