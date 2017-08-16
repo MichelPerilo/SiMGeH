@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="564.0" maxWidth="650.0" minHeight="481.0" minWidth="474.0" prefHeight="481.0" prefWidth="474.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="br.simgeh.model.SelectProdutoController">
+   <children>
+      <Label layoutX="22.0" layoutY="49.0" prefHeight="17.0" prefWidth="96.0" text="Data de cadastro" />
+      <Label layoutX="22.0" layoutY="120.0" text="ID" />
+      <Label layoutX="20.0" layoutY="155.0" prefHeight="17.0" prefWidth="46.0" text="NOME" />
+      <Label layoutX="204.0" layoutY="155.0" prefHeight="17.0" prefWidth="34.0" text="TIPO" />
+      <Label layoutX="20.0" layoutY="208.0" text="QUATIDADE EM ESTOQUE" />
+      <Label layoutX="20.0" layoutY="265.0" text="DESCRIÇÃO " />
+      <Separator layoutX="18.0" layoutY="317.0" prefHeight="0.0" prefWidth="620.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="12.0" />
+      <Label layoutX="29.0" layoutY="342.0" text="ID DA REQUISIÇÃO" />
+      <Label layoutX="29.0" layoutY="400.0" text="QUANTIDADE" />
+      <Button fx:id="BTLiberarFarmaco" layoutX="340.0" layoutY="396.0" mnemonicParsing="false" onAction="#debitarProduto" text="LIBERAR FARMACO" />
+      <TextField fx:id="TXdata" disable="true" layoutX="131.0" layoutY="45.0" prefHeight="25.0" prefWidth="102.0" />
+      <TextField fx:id="TXID" disable="true" layoutX="70.0" layoutY="116.0" prefHeight="25.0" prefWidth="52.0" />
+      <TextField fx:id="TXNome" disable="true" layoutX="66.0" layoutY="151.0" prefHeight="25.0" prefWidth="119.0" />
+      <TextField fx:id="TXTipo" disable="true" layoutX="238.0" layoutY="151.0" prefHeight="25.0" prefWidth="109.0" />
+      <TextField fx:id="TXQTD" disable="true" layoutX="182.0" layoutY="204.0" prefHeight="25.0" prefWidth="52.0" />
+      <TextField fx:id="TXDescricao" disable="true" layoutX="90.0" layoutY="261.0" prefHeight="25.0" prefWidth="260.0" />
+      <TextField fx:id="TXIDRequisixao" layoutX="134.0" layoutY="338.0" prefHeight="25.0" prefWidth="128.0" />
+      <TextField fx:id="TXQTDDebitar" layoutX="134.0" layoutY="388.0" prefHeight="25.0" prefWidth="75.0" />
+   </children>
+</AnchorPane>
