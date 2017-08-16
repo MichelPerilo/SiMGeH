@@ -40,8 +40,13 @@ public class Produto implements Serializable{
     }
 
     
-    public void debitarQTD(){
-        --qtd;
+    public void debitarQTD(int qtd){
+        if(this.qtd - qtd > 0)
+        this.qtd -=qtd;
+        else{
+                System.out.println("Valor indisponivel");
+//        quantidade indisponivel exeption
+                }
     }
     
     
