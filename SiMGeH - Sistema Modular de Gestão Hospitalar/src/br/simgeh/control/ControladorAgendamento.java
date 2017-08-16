@@ -9,14 +9,12 @@ import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.CadastroServicoExistenteException;
 import br.simgeh.model.Agendamento;
 import br.simgeh.model.Consulta;
-import br.simgeh.model.Exame;
 import br.simgeh.model.ExameImagem;
 import br.simgeh.model.ExameLaboratorial;
 import br.simgeh.model.ProcCirurgico;
 import br.simgeh.model.Servico;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Date;
 
 /**
  *

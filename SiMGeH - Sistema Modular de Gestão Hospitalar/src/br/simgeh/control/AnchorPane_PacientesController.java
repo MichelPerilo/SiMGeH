@@ -8,6 +8,8 @@ package br.simgeh.control;
 import br.simgeh.model.Animal;
 import java.net.URL;
 import static java.util.Collections.list;
+
+import java.io.IOException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -33,13 +35,17 @@ public class AnchorPane_PacientesController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         
-        listar();
+        try {
+			listar();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }    
     
-    public void listar(){
+    public void listar() throws IOException{
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
-        fachada.allAnimals();
-        ObservableList<Animal> items =FXCollections.observableArrayList (fachada.allAnimals());
+        ObservableList<Animal> items = FXCollections.observableArrayList (fachada.allAnimals());
         list.setItems(items);
     }
 
