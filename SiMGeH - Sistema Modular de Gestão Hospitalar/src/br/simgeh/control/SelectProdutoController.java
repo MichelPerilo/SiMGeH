@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.simgeh.control;
 
 import br.simgeh.model.Produto;
@@ -67,18 +62,18 @@ public class SelectProdutoController implements Initializable {
         produto = p;
     }
     
-//    public void carregarInformações(){
-//        
-//        TXDescricao.setText(produto.getDescricao());
-//        TXID.setText(Integer.toString(produto.getId()));
-//        TXNome.setText(produto.getNome());
-//        TXTipo.setText(produto.getTipo());
-//        TXdata.setText(produto.getDataFormatada());
-//        TXQTD.setText(Integer.toString(produto.getQtd()));
-//        
-//        
-//        
-//    }
+    public void carregarInformações(){
+        
+        TXDescricao.setText(produto.getDescricao());
+        TXID.setText(Integer.toString(produto.getId()));
+        TXNome.setText(produto.getNome());
+        TXTipo.setText(produto.getTipo());
+        TXdata.setText(produto.getDataFormatada());
+        TXQTD.setText(Integer.toString(produto.getQtd()));
+        
+        
+        
+    }
     
     @FXML
     public void debitarProduto(){
