@@ -9,6 +9,7 @@ package br.simgeh.control;
 import br.simgeh.exeception.CadatroProdutoExistenteExeception;
 import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
 import br.simgeh.model.Produto;
+import br.simgeh.model.RequisicaoProduto;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -80,9 +81,18 @@ public class AnchorPane_FarmacoController implements Initializable {
     private TableColumn<Produto, String> tableColumnProdutoDescricao;
             
     private ObservableList<Produto> observableListProduto;
+    private ObservableList<RequisicaoProduto>  observableListRequisicaoProduto;
+    
+    
+    @FXML
+    private TableView<RequisicaoProduto> tableViewRequisicao;
+    @FXML
+    private TableColumn<RequisicaoProduto, String> tableColumnID;
+    @FXML
+    private TableColumn<RequisicaoProduto, String> tableColumnSetor;
                                     
     
-    private IGerenciadorProduto fachada;
+    private IGerenciadorFarmaco fachada;
      
     
     @Override
@@ -92,6 +102,7 @@ public class AnchorPane_FarmacoController implements Initializable {
             
             this.fachada = ControladorFarmaco.getInstance();
             carregarTableViewProdutos();
+            carregarTableViewRequisicoes();
             
         } catch (IOException ex) {
             Logger.getLogger(AnchorPane_FarmacoController.class.getName()).log(Level.SEVERE, null, ex);
@@ -110,13 +121,13 @@ public class AnchorPane_FarmacoController implements Initializable {
           textFieldTipo.setText(p.getTipo());
           textFieldDescricao.setText(p.getDescricao());
        
-          textFieldID.setEditable(false);
-          textFieldNome.setEditable(false);
-          textFieldQTD.setEditable(false);
-          textFieldTipo.setEditable(false);
-          textFieldDescricao.setEditable(false);
+//          textFieldID.setEditable(false);
+//          textFieldNome.setEditable(false);
+//          textFieldQTD.setEditable(false);
+//          textFieldTipo.setEditable(false);
+//          textFieldDescricao.setEditable(false);
        
-          textFieldBusca.setText("");
+//          textFieldBusca.setText("");
           
 
 	} catch (ProcuraProdutoInexistenteExeception ppi) {
@@ -157,7 +168,7 @@ public class AnchorPane_FarmacoController implements Initializable {
        
         try {
         Alert alert = new Alert(AlertType.WARNING);
-        fachada.cadatrarProduto(textFieldNome.getText(),textFieldTipo.getText(),textFieldDescricao.getText(),Integer.parseInt(textFieldID.getText()),Integer.parseInt(textFieldQTD.getText()));
+        fachada.cadatrarProduto(textFieldNome.getText(),textFieldTipo.getText(),textFieldDescricao.getText(),Integer.parseInt(textFieldQTD.getText()));
         alert.setHeaderText(textFieldNome.getText() + "   CADASTRADO COM SUCESSO");
         alert.showAndWait();   
         textFieldID.setText("");
@@ -203,24 +214,60 @@ public class AnchorPane_FarmacoController implements Initializable {
         tableViewProduto.setItems(observableListProduto);
     }   
     
+    public void carregarTableViewRequisicoes() throws IOException {
+
+        
+        tableColumnID.setCellValueFactory(new PropertyValueFactory<>("ID"));
+        tableColumnSetor.setCellValueFactory(new PropertyValueFactory<>("setor"));
+        
+        fachada.cadatrarRequisicao("Clinica", "Aberto", "paciente em caso de vida",5);
+        fachada.cadatrarRequisicao("teste", "teste", "teste", 3);
+        fachada.cadatrarRequisicao("teste2", "teste2", "teste3", 63);
+        fachada.cadatrarRequisicao("teste3", "teste3", "teste3", 3);
+        fachada.cadatrarRequisicao("teste4", "teste4", "teste4", 63);
+        fachada.cadatrarRequisicao("teste5", "teste5", "teste5", 63);
+        fachada.cadatrarRequisicao("teste6", "teste6", "teste6", 63);
+        fachada.cadatrarRequisicao("teste7", "teste7", "teste7", 63);
+        fachada.cadatrarRequisicao("teste8", "teste8", "teste8", 63);
+        fachada.cadatrarRequisicao("teste9", "teste9", "teste9", 63);
+        
+        observableListRequisicaoProduto = FXCollections.observableArrayList(fachada.exibiRequisicao());
+        tableViewRequisicao.setItems(observableListRequisicaoProduto);
+    }  
     
-   
     
-    public void showAnchorPane_SelectIntem() throws IOException{
+   @FXML
+    public void clicarMouseItemListViewProdutos() throws IOException {
         Produto p = tableViewProduto.getSelectionModel().getSelectedItem();
-        FXMLLoader loader = new FXMLLoader();
+        showAnchorPane_SelectIntem(p);
+        
+    }
+    
+    public void showAnchorPane_SelectIntem(Produto p) throws IOException{
+         
+        System.out.println(p);
+        FXMLLoader loader = new FXMLLoader();        
         loader.setLocation(SelectProdutoController.class.getResource("../views/SelectProduto.fxml"));
         AnchorPane page = (AnchorPane) loader.load();
-        
+                 
         Stage produtoSelect = new Stage();
+        produtoSelect.setTitle("Descrição de Produto");
         Scene scene = new Scene(page);
         produtoSelect.setScene(scene);
         produtoSelect.setResizable(false);
         
         SelectProdutoController controller = loader.getController();
-        controller.setProduto(p);
+        
+        controller.setTXDescricao(p.getDescricao());
+        controller.setTXNome(p.getNome());
+        controller.setTXdata(p.getDataFormatada());
+        controller.setTXTipo(p.getTipo());
+        controller.setTXID(Integer.toString(p.getId()));
+        controller.setTXQTD(Integer.toString(p.getQtd()));
+       
         controller.setStage(produtoSelect);       
         produtoSelect.showAndWait();
+        
         
         
     }  

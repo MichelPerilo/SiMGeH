@@ -2,7 +2,9 @@ package br.simgeh.control;
 
 import br.simgeh.exeception.CadatroProdutoExistenteExeception;
 import br.simgeh.exeception.ProcuraProdutoInexistenteExeception;
+import br.simgeh.exeception.ProcuraRFInexistenteExeception;
 import br.simgeh.model.Produto;
+import br.simgeh.model.RequisicaoProduto;
 import java.io.IOException;
 import java.util.List;
 
@@ -11,24 +13,25 @@ import java.util.List;
  * @author Raylison
  */
 
-public class ControladorFarmaco implements IGerenciadorProduto{
+public class ControladorFarmaco implements IGerenciadorFarmaco{
     
     
      private  CadastroProduto produto = new CadastroProduto();
-     private static IGerenciadorProduto instance;
-
-    public static IGerenciadorProduto getInstance() {
+     private  CadastroRequisicaoFarmaco requisicaoF = new CadastroRequisicaoFarmaco();
+     private static IGerenciadorFarmaco instance;
+     
+    public static IGerenciadorFarmaco getInstance() {
         if (instance == null) {
             instance = new ControladorFarmaco();
         }
         return instance;
     }
-
-   
-    public void cadatrarProduto(String nome, String tipo, String descricao, int id, int qtd) throws IOException,
+    
+      
+    public void cadatrarProduto(String nome, String tipo, String descricao, int qtd) throws IOException,
             CadatroProdutoExistenteExeception{
 
-    Produto p = new Produto(nome,tipo,descricao,id,qtd);    
+    Produto p = new Produto(nome,tipo,descricao,qtd);    
     this.produto.cadatrar(p);
 
     }
@@ -53,4 +56,26 @@ public class ControladorFarmaco implements IGerenciadorProduto{
         return p;
 
     }
+    
+    
+    public void cadatrarRequisicao(String setor, String status, String justificativa,int qtd)throws IOException{
+        
+        RequisicaoProduto rf = new RequisicaoProduto(setor,status,justificativa,qtd);    
+        this.requisicaoF.cadatrar(rf);
+        
+    }
+
+    public List<RequisicaoProduto> exibiRequisicao() throws IOException{
+        return this.requisicaoF.exibiRequisicao();
+   
+    }
+    
+    public RequisicaoProduto pesquisaRequisicaoProduto(int id)
+            throws ProcuraRFInexistenteExeception{
+        RequisicaoProduto rf = this.requisicaoF.acharProduto(id);
+        return rf;
+    }
+        
 }
+    
+

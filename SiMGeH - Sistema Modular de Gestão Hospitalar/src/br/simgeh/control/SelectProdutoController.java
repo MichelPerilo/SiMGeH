@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.simgeh.control;
 
 import br.simgeh.model.Produto;
@@ -42,14 +37,16 @@ public class SelectProdutoController implements Initializable {
     private TextField TXQTDDebitar;
     @FXML
     private Stage stage;
-    private Produto produto;
+    
+  
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-//        carregarInformações();
+        
+      
     }    
     
     
@@ -63,29 +60,54 @@ public class SelectProdutoController implements Initializable {
         
     }
     
-    public void setProduto(Produto p){
-        produto = p;
-    }
     
-//    public void carregarInformações(){
-//        
-//        TXDescricao.setText(produto.getDescricao());
-//        TXID.setText(Integer.toString(produto.getId()));
-//        TXNome.setText(produto.getNome());
-//        TXTipo.setText(produto.getTipo());
-//        TXdata.setText(produto.getDataFormatada());
-//        TXQTD.setText(Integer.toString(produto.getQtd()));
-//        
-//        
-//        
-//    }
+    
+    @FXML
+    public void carregarInformações(Produto produto){
+    
+        
+        if(produto != null){
+        TXDescricao.setText(produto.getDescricao());
+        TXID.setText(Integer.toString(produto.getId()));
+        TXNome.setText(produto.getNome());
+        TXTipo.setText(produto.getTipo());
+        TXdata.setText(produto.getDataFormatada());
+        TXQTD.setText(Integer.toString(produto.getQtd()));
+        }
+        
+        
+    }
+
+    public void setTXdata(String TXdata) {
+        this.TXdata.setText(TXdata);
+    }
+
+    public void setTXID(String TXID) {
+        this.TXID.setText(TXID);
+    }
+
+    public void setTXNome(String TXNome) {
+        this.TXNome.setText(TXNome);
+    }
+
+    public void setTXTipo(String TXTipo) {
+        this.TXTipo.setText(TXTipo);
+    }
+
+    public void setTXQTD(String TXQTD) {
+        this.TXQTD.setText(TXQTD);
+    }
+
+    public void setTXDescricao(String TXDescricao) {
+        this.TXDescricao.setText(TXDescricao);
+    }
     
     @FXML
     public void debitarProduto(){
         
 //        Salva no relatorio o ID da requisição com a qtd.
-        if(TXQTDDebitar != null && TXIDRequisixao != null)
-          produto.debitarQTD(Integer.parseInt(TXQTDDebitar.getText()));
+      //  if(TXQTDDebitar != null && TXIDRequisixao != null)
+          //produto.debitarQTD(Integer.parseInt(TXQTDDebitar.getText()));
         
     }
     

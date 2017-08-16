@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
@@ -12,13 +17,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="900.0" prefHeight="566.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoPacienteController">
+<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="900.0" prefHeight="818.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoPacienteController">
    <children>
-      <AnchorPane layoutX="73.0" layoutY="55.0" prefHeight="469.0" prefWidth="755.0">
+      <AnchorPane layoutX="73.0" layoutY="33.0" prefHeight="718.0" prefWidth="796.0">
          <children>
             <Separator layoutX="63.0" layoutY="174.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
             <Separator layoutX="686.0" layoutY="181.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
-            <Label layoutX="256.0" layoutY="14.0" prefHeight="48.0" prefWidth="262.0" text="Ficha Clínica - Novo Paciente">
+            <Label layoutX="303.0" layoutY="14.0" prefHeight="65.0" prefWidth="262.0" text="Ficha Clínica - Novo Paciente">
                <font>
                   <Font size="20.0" />
                </font>
@@ -32,44 +37,53 @@
             <Label layoutX="70.0" layoutY="301.0" text="Idade:" />
             <Label layoutX="243.0" layoutY="198.0" text="Sexo:" />
             <Label layoutX="143.0" layoutY="301.0" text="Pelagem:" />
-            <RadioButton fx:id="rdBtnSexM" layoutX="242.0" layoutY="215.0" mnemonicParsing="false" text="Macho" />
-            <RadioButton fx:id="rdBtnSexF" layoutX="307.0" layoutY="215.0" mnemonicParsing="false" text="Fêmea" />
-            <ComboBox layoutX="142.0" layoutY="319.0" prefHeight="25.0" prefWidth="97.0" />
-            <Separator layoutX="379.0" layoutY="198.0" orientation="VERTICAL" prefHeight="165.0" prefWidth="6.0" />
+            <ComboBox fx:id="pelageCbbx" layoutX="142.0" layoutY="319.0" prefHeight="25.0" prefWidth="97.0" />
             <TextField layoutX="238.0" layoutY="265.0" prefHeight="25.0" prefWidth="126.0" />
-            <Label layoutX="385.0" layoutY="173.0" text="Dados do Tutor">
+            <Label layoutX="72.0" layoutY="385.0" text="Dados do Tutor">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <ComboBox layoutX="256.0" layoutY="319.0" prefHeight="25.0" prefWidth="107.0" />
-            <Label layoutX="257.0" layoutY="301.0" text="Porte:" />
-            <TextField fx:id="txtfld_nometutor" layoutX="388.0" layoutY="215.0" prefHeight="25.0" prefWidth="160.0" />
-            <Label layoutX="388.0" layoutY="198.0" text="Tutor(a):" />
-            <Label layoutX="562.0" layoutY="199.0" text="CPF:" />
-            <TextField fx:id="txtfld_cpf" layoutX="562.0" layoutY="215.0" prefHeight="25.0" prefWidth="119.0" />
-            <TextField fx:id="txtfld_fone1" layoutX="389.0" layoutY="319.0" prefHeight="25.0" prefWidth="88.0" />
-            <Label layoutX="390.0" layoutY="302.0" text="Fone:" />
-            <Label layoutX="484.0" layoutY="302.0" text="Logradouro:" />
-            <TextField layoutX="484.0" layoutY="319.0" prefHeight="25.0" prefWidth="148.0" />
-            <TextField layoutX="638.0" layoutY="319.0" prefHeight="25.0" prefWidth="45.0" />
-            <Label layoutX="639.0" layoutY="302.0" text="Nº:" />
-            <Label layoutX="389.0" layoutY="249.0" text="Cidade:" />
-            <ChoiceBox layoutX="562.0" layoutY="266.0" prefHeight="25.0" prefWidth="119.0" />
-            <Label layoutX="563.0" layoutY="249.0" text="Bairro:" />
-            <Button fx:id="btn_gerarregistro" layoutX="379.0" layoutY="399.0" mnemonicParsing="false" onAction="#handlerGerarRegistro" prefHeight="33.0" prefWidth="126.0" text="Gerar Registro" />
-            <Button layoutX="300.0" layoutY="399.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
-            <TextField editable="false" layoutX="108.0" layoutY="131.0" />
+            <ComboBox fx:id="porteCbbx" layoutX="434.0" layoutY="321.0" prefHeight="25.0" prefWidth="107.0" />
+            <Label layoutX="435.0" layoutY="303.0" text="Porte:" />
+            <TextField fx:id="txtfld_nometutor" layoutX="75.0" layoutY="427.0" prefHeight="25.0" prefWidth="160.0" />
+            <Label layoutX="75.0" layoutY="410.0" text="Tutor(a):" />
+            <Label layoutX="249.0" layoutY="411.0" text="CPF:" />
+            <TextField fx:id="txtfld_cpf" layoutX="249.0" layoutY="427.0" onKeyReleased="#tfCPF_KeyReleased" prefHeight="25.0" prefWidth="177.0" />
+            <Label layoutX="77.0" layoutY="519.0" text="Logradouro:" />
+            <TextField fx:id="txtfld_Logradouro" layoutX="77.0" layoutY="536.0" prefHeight="25.0" prefWidth="227.0" />
+            <TextField fx:id="txtfld_No" layoutX="328.0" layoutY="536.0" prefHeight="25.0" prefWidth="45.0" />
+            <Label layoutX="329.0" layoutY="519.0" text="Nº:" />
+            <Label layoutX="76.0" layoutY="461.0" text="Cidade:" />
+            <Label layoutX="232.0" layoutY="461.0" text="Bairro:" />
+            <Button fx:id="btn_gerarregistro" layoutX="372.0" layoutY="618.0" mnemonicParsing="false" onAction="#handlerGerarRegistro" prefHeight="33.0" prefWidth="126.0" text="Gerar Registro" />
+            <Button layoutX="296.0" layoutY="618.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
+            <TextField fx:id="idAnimalTxtField" editable="false" layoutX="108.0" layoutY="131.0" />
             <Label layoutX="69.0" layoutY="135.0" text="ID" />
             <Label layoutX="61.0" layoutY="90.0" text="Data" />
-            <ComboBox fx:id="cidadeCbbx" layoutX="387.0" layoutY="268.0" prefWidth="150.0" />
-            <TextField fx:id="dtaAtualLbl" layoutX="108.0" layoutY="86.0" />
+            <ComboBox fx:id="cidadeCbbx" layoutX="74.0" layoutY="480.0" prefWidth="150.0" />
+            <TextField fx:id="dtaAtualTxtField" layoutX="108.0" layoutY="86.0" />
+            <ComboBox fx:id="genderCbbx" layoutX="242.0" layoutY="215.0" prefHeight="25.0" prefWidth="119.0" />
+            <ComboBox fx:id="bairroCbbx" layoutX="235.0" layoutY="480.0" prefHeight="25.0" prefWidth="132.0" />
+            <Label layoutX="72.0" layoutY="175.0" text="Dados do Animal">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="250.0" layoutY="303.0" text="Peso:" />
+            <TextField fx:id="wheightTxtField" layoutX="248.0" layoutY="321.0" />
+            <ImageView fitHeight="85.0" fitWidth="180.0" layoutX="683.0" layoutY="592.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@qms_v2_h_rgb.png" />
+               </image>
+            </ImageView>
+            <Separator layoutX="61.0" layoutY="370.0" orientation="VERTICAL" prefHeight="200.0" />
+            <TextField fx:id="txtfld_foneFixo" layoutX="444.0" layoutY="427.0" onKeyReleased="#tfFoneFixo_KeyReleased" />
+            <TextField fx:id="txtfld_Celular" layoutX="444.0" layoutY="480.0" onKeyReleased="#tfCelular_KeyReleased" />
+            <Label layoutX="444.0" layoutY="411.0" text="Fone Fixo:" />
+            <Label layoutX="444.0" layoutY="461.0" text="Celular:" />
+            <Separator layoutX="683.0" layoutY="380.0" orientation="VERTICAL" prefHeight="200.0" />
          </children>
       </AnchorPane>
-      <ImageView fitHeight="85.0" fitWidth="180.0" layoutX="772.0" layoutY="473.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@qms_v2_h_rgb.png" />
-         </image>
-      </ImageView>
    </children>
 </AnchorPane>

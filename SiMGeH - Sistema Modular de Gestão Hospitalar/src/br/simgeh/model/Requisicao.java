@@ -10,14 +10,17 @@ package br.simgeh.model;
  * @author Michel Perilo
  */
 public abstract class Requisicao {
-    private int prontuario_id;
-    private int ID;
-    private int status;              /*
+    int prontuario_id;
+    static int IDcont = 0;
+    int ID;
+    
+    String status;              /*
                                         1 - Não avaliada 
-                                        2 - Em andamento
                                         3 - Rejeitada 
                                         4 - Finalizada
                                                         */
-    private String justificativa; //Caso Rejeitada
+    String justificativa; //Caso Rejeitada
+  
+    
   
 }

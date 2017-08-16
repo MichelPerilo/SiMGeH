@@ -19,6 +19,7 @@ public class Produto implements Serializable{
     private String nome;
     private String tipo;
     private String descricao;
+    static int IDPcont = 0;
     private int id;
     private int qtd;
     private Calendar calendar;
@@ -26,11 +27,11 @@ public class Produto implements Serializable{
     private Date minhaDataEncapsulada;
     private String dataFormatada;
 
-    public Produto(String nome, String tipo, String descricao,int id,int qtd) {
+    public Produto(String nome, String tipo, String descricao,int qtd) {
         setNome(nome);
         setTipo(tipo);
         setDescricao(descricao);
-        setId(id);
+        setId();
         setQtd(qtd);
         this.calendar = Calendar.getInstance();
 	this.formatter = new SimpleDateFormat("dd/MMM/YYYY    HH: mm: ss");
@@ -94,8 +95,8 @@ public class Produto implements Serializable{
         }
     }
     
-     private void setId(int id) {
-        this.id = id;
+     private void setId() {
+        this.id = ++Produto.IDPcont;
     }
 
     private void setQtd(int qtd) {
