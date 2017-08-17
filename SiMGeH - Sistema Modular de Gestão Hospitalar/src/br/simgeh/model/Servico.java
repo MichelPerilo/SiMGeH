@@ -33,4 +33,7 @@ public abstract class Servico {
         this.protuario_id = protuario_id;
     }
     
+    
+  
+    
 }

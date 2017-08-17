@@ -8,6 +8,7 @@ package br.simgeh.data;
 import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.ProcuraAgendamentoInexistenteException;
 import br.simgeh.model.Agendamento;
+import br.simgeh.model.Animal;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -189,10 +190,21 @@ public class RepositorioAgendamento implements IRepositorioAgendamento, Serializ
 		return i;
 	}
         
-        public ArrayList<Agendamento> agendamentosPorProntuario(int prontuario_id){
+        public ArrayList<Agendamento> agendamentosPorProntuario(Animal animal){
             ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
             for (int i =0; i < agendamento.length; i++){
-                if (agendamento[i] != null && prontuario_id == agendamento[i].getProntuario_id()){
+                if (agendamento[i] != null && animal.equals(agendamento[i].getAnimal())){
+                    agendamentos.add(agendamento[i]);
+                }
+            }
+            
+            return agendamentos;
+        }
+        
+        public ArrayList<Agendamento> allAgendamentos(){
+             ArrayList<Agendamento> agendamentos = new ArrayList<Agendamento>();
+            for (int i =0; i < agendamento.length; i++){
+                if (agendamento[i] != null){
                     agendamentos.add(agendamento[i]);
                 }
             }

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="690.0" minWidth="1200.0" prefHeight="690.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_BuscarAgendamentoController">
+   <children>
+      <ToolBar layoutY="-1.0" nodeOrientation="LEFT_TO_RIGHT" prefHeight="70.0" prefWidth="1200.0">
+        <items>
+            <Label prefHeight="17.0" prefWidth="52.0" text="Tipos:" />
+            <CheckBox fx:id="checkbox_consultas" alignment="TOP_RIGHT" layoutX="30.0" mnemonicParsing="false" prefHeight="17.0" prefWidth="78.0" text="Consultas">
+               <opaqueInsets>
+                  <Insets right="200.0" />
+               </opaqueInsets>
+            </CheckBox>
+            <Label prefHeight="17.0" prefWidth="10.0" />
+            <CheckBox fx:id="checkbox_procirurgico" mnemonicParsing="false" text="Procedimentos Cirurgicos" />
+            <Label prefHeight="17.0" prefWidth="10.0" />
+            <CheckBox fx:id="checkbox_exames" mnemonicParsing="false" text="Exames" />
+            <AnchorPane prefHeight="60.0" prefWidth="694.0" />
+          <Button fx:id="btn_atualizar" contentDisplay="TOP" mnemonicParsing="false" onAction="#handlerAtualizar" prefHeight="37.0" prefWidth="95.0" text="Atualizar">
+               <opaqueInsets>
+                  <Insets left="600.0" />
+               </opaqueInsets>
+            </Button>
+        </items>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </ToolBar>
+      <ImageView fitHeight="109.0" fitWidth="136.0" layoutX="1030.0" layoutY="560.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@qms_v2_h_rgb.png" />
+         </image>
+      </ImageView>
+      <ListView fx:id="listview_listaagendamentos" layoutX="147.0" layoutY="95.0" onMouseClicked="#handlerClicarAgendamento" prefHeight="518.0" prefWidth="863.0" />
+   </children>
+</AnchorPane>

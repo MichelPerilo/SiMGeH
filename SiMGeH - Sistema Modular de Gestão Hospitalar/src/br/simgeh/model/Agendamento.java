@@ -13,14 +13,14 @@ import java.util.Date;
  * @author Michel Perilo
  */
 public class Agendamento {
-    private int prontuario_id;
+    private Animal animal;
     private String data;
     private String hora;
     private Servico servico;
     
     
-    public Agendamento(int prontuario_id, String data, String hora, Servico servico ){
-        this.prontuario_id = prontuario_id;
+    public Agendamento(Animal animal, String data, String hora, Servico servico ){
+        this.animal= animal;
         this.data = data;
         this.hora = hora;
         this.servico = servico;
@@ -68,24 +68,28 @@ public class Agendamento {
         this.servico = servico;
     }
 
-    /**
-     * @return the prontuario_id
-     */
-    public int getProntuario_id() {
-        return prontuario_id;
-    }
 
-    /**
-     * @param prontuario_id the prontuario_id to set
-     */
-    public void setProntuario_id(int prontuario_id) {
-        this.prontuario_id = prontuario_id;
-    }
 
     
    
-     /**
-     * @return the medico
+  public String toString(){
+      String resultado = this.getServico().toString() + " | " + "Data: "  + this.getData() + " | " + "Hora: " + this.getHora() + " | " + "Paciente :" + this.animal.getNome() + " | " + "Tutor: " + this.animal.getTutor().getNome();
+      
+      return resultado;
+  }
+
+    /**
+     * @return the animal
      */
+    public Animal getAnimal() {
+        return animal;
+    }
+
+    /**
+     * @param animal the animal to set
+     */
+    public void setAnimal(Animal animal) {
+        this.animal = animal;
+    }
    
 }

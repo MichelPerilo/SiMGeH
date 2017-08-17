@@ -20,6 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -37,11 +38,13 @@ import org.controlsfx.control.textfield.TextFields;
 public class AnchorPane_NovoAgendamento_ConsultaController implements Initializable {
 
     @FXML
-    private TextField input;
+    public TextField input;
     @FXML
-    private DatePicker datepicker_data;
+    public DatePicker datepicker_data;
     @FXML
-    private ChoiceBox txtfld_hora;
+    public ChoiceBox txtfld_hora;
+    @FXML
+    public Button btn_agendar;
     
     
     private Stage stage;
@@ -63,17 +66,21 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
     public void inicia(){
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
         fachada.allAnimals();
-        TextFields.bindAutoCompletion(input, fachada.allAnimals());
+        TextFields.bindAutoCompletion(getInput(), fachada.allAnimals());
+        String[] horas = {"8:00", "8:20", "8:40", "9:00", "9:20", "9:40", "10:00", "14:00", "14:20", "14:40","15:00"};
+         ObservableList<String> items = FXCollections.observableArrayList (horas);
+        getTxtfld_hora().setItems(items);
          
     }
     
    public void handlerAgendarConsulta() throws IOException, CadastroAgendamentoExistenteException, CadastroServicoExistenteException{
         IGerenciadorAgendamento fachada = new ControladorAgendamento().getInstance();
-        input.getText();
-        String data =  datepicker_data.getValue().toString();
-        int prontuario_id = Integer.parseInt(buscarAnimal(input.getText()).getId());
-        String hora = "8:00";
-        fachada.cadatrarAgendamento(prontuario_id ,  data , hora , 1);
+        getInput().getText();
+        String data =  getDatepicker_data().getValue().toString();
+        Animal animal = buscarAnimal(getInput().getText());
+        String hora = getTxtfld_hora().getValue().toString();
+        int tipo = 1;
+        fachada.cadatrarAgendamento(animal ,  data , hora , tipo);
    }
 
    public Animal buscarAnimal(String input){
@@ -99,6 +106,48 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
      */
     public void setStage(Stage stage) {
         this.stage = stage;
+    }
+
+    /**
+     * @return the input
+     */
+    public TextField getInput() {
+        return input;
+    }
+
+    /**
+     * @param input the input to set
+     */
+    public void setInput(TextField input) {
+        this.input = input;
+    }
+
+    /**
+     * @return the datepicker_data
+     */
+    public DatePicker getDatepicker_data() {
+        return datepicker_data;
+    }
+
+    /**
+     * @param datepicker_data the datepicker_data to set
+     */
+    public void setDatepicker_data(DatePicker datepicker_data) {
+        this.datepicker_data = datepicker_data;
+    }
+
+    /**
+     * @return the txtfld_hora
+     */
+    public ChoiceBox getTxtfld_hora() {
+        return txtfld_hora;
+    }
+
+    /**
+     * @param txtfld_hora the txtfld_hora to set
+     */
+    public void setTxtfld_hora(ChoiceBox txtfld_hora) {
+        this.txtfld_hora = txtfld_hora;
     }
    
     
