@@ -95,7 +95,7 @@
                   </ScrollPane>
                   <ScrollPane layoutX="970.0" layoutY="95.0" prefHeight="374.0" prefWidth="219.0" AnchorPane.bottomAnchor="13.0" AnchorPane.leftAnchor="969.0" AnchorPane.topAnchor="95.0">
                      <content>
-                        <TableView fx:id="tableViewRequisicao" prefHeight="419.0" prefWidth="202.0">
+                        <TableView fx:id="tableViewRequisicao" onMouseClicked="#clicarMouseItemListViewRequisicao" prefHeight="419.0" prefWidth="202.0">
                           <columns>
                             <TableColumn fx:id="tableColumnID" prefWidth="65.0" text="ID" />
                             <TableColumn fx:id="tableColumnSetor" prefWidth="135.0" text="SETOR" />

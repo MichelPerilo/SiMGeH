@@ -25,7 +25,7 @@ public interface IGerenciadorFarmaco {
     public Produto pesquisarProduto(String nome)
             throws ProcuraProdutoInexistenteExeception;
 
-    public void cadatrarRequisicao(String setor, String status, String justificativa, int qtd)throws IOException;
+    public void cadatrarRequisicao(String setor, String descricao, String justificativa, int qtd)throws IOException;
 
     public List<RequisicaoProduto> exibiRequisicao() throws IOException;
 

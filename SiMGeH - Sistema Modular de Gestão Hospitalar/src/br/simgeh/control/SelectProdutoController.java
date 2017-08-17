@@ -1,6 +1,5 @@
 package br.simgeh.control;
 
-import br.simgeh.model.Produto;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -16,8 +15,7 @@ import javafx.stage.Stage;
  */
 public class SelectProdutoController implements Initializable {
 
-    @FXML
-    private Button BTLiberarFarmaco;
+    
     @FXML
     private TextField TXdata;
     @FXML
@@ -59,24 +57,7 @@ public class SelectProdutoController implements Initializable {
         this.stage = stage;
         
     }
-    
-    
-    
-    @FXML
-    public void carregarInformações(Produto produto){
-    
-        
-        if(produto != null){
-        TXDescricao.setText(produto.getDescricao());
-        TXID.setText(Integer.toString(produto.getId()));
-        TXNome.setText(produto.getNome());
-        TXTipo.setText(produto.getTipo());
-        TXdata.setText(produto.getDataFormatada());
-        TXQTD.setText(Integer.toString(produto.getQtd()));
-        }
-        
-        
-    }
+   
 
     public void setTXdata(String TXdata) {
         this.TXdata.setText(TXdata);
@@ -100,17 +81,5 @@ public class SelectProdutoController implements Initializable {
 
     public void setTXDescricao(String TXDescricao) {
         this.TXDescricao.setText(TXDescricao);
-    }
-    
-    @FXML
-    public void debitarProduto(){
-        
-//        Salva no relatorio o ID da requisição com a qtd.
-      //  if(TXQTDDebitar != null && TXIDRequisixao != null)
-          //produto.debitarQTD(Integer.parseInt(TXQTDDebitar.getText()));
-        
-    }
-    
-
-    
+    }   
 }
