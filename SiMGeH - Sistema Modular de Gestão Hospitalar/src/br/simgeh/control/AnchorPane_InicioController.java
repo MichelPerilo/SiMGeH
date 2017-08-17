@@ -70,6 +70,8 @@ public class AnchorPane_InicioController implements Initializable {
     private MenuItem menuitem_farmaco_painel;
     @FXML
     private MenuItem menuitem_novoagendamento_consulta;
+    @FXML
+    private MenuItem menuitem_buscaragendamento;
     
     
     @Override
@@ -153,6 +155,11 @@ public class AnchorPane_InicioController implements Initializable {
         menu_laboratorio.setVisible(true);
         menu_sair.setVisible(true);
         
+    }
+    
+    public void handlerBuscarAgendamento() throws IOException{
+        AnchorPane anchorpane_buscaragendamento = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_BuscarAgendamento.fxml"));
+        anchorpane_main.getChildren().setAll(anchorpane_buscaragendamento);
     }
     
     public void handlerBuscarPaciente() throws IOException{

@@ -8,6 +8,7 @@ package br.simgeh.control;
 import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.CadastroServicoExistenteException;
 import br.simgeh.model.Agendamento;
+import br.simgeh.model.Animal;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -17,7 +18,8 @@ import java.util.ArrayList;
  */
 public interface IGerenciadorAgendamento {
     
-     public void cadatrarAgendamento(int prontuario_id, String data, String hora , int type) throws IOException, CadastroAgendamentoExistenteException, CadastroServicoExistenteException;
-     public ArrayList<Agendamento> agendamentosPorProntuario(int prontuario_id);
+     public void cadatrarAgendamento(Animal animal, String data, String hora , int type) throws IOException, CadastroAgendamentoExistenteException, CadastroServicoExistenteException;
+     public ArrayList<Agendamento> agendamentosPorProntuario(Animal animal);
+      public ArrayList<Agendamento> allAgendamentos();
     
 }

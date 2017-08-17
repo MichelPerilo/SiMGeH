@@ -11,5 +11,11 @@ package br.simgeh.model;
  */
 public class Consulta extends Servico {
 
+    @Override
+    public String toString(){
+        String resultado = "CONSULTA"; 
+                
+        return resultado;
+    }
    
 }
