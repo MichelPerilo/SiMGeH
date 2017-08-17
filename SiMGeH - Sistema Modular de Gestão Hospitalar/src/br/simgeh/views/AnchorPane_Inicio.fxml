@@ -27,9 +27,14 @@
                         <SeparatorMenuItem mnemonicParsing="false" />
                         <Menu mnemonicParsing="false" text="Agendamento">
                           <items>
-                              <MenuItem mnemonicParsing="false" text="Cirurgia" />
-                              <MenuItem mnemonicParsing="false" text="Exame" />
-                              <MenuItem fx:id="menuitem_novoagendamento_consulta" mnemonicParsing="false" onAction="#handlerNovoAgendamento_Consulta" text="Consulta" />
+                              <Menu mnemonicParsing="false" text="Novo">
+                                <items>
+                                    <MenuItem fx:id="menuitem_novoagendamento_consulta" mnemonicParsing="false" onAction="#handlerNovoAgendamento_Consulta" text="Consulta" />
+                                    <MenuItem mnemonicParsing="false" text="Cirurgia" />
+                                    <MenuItem mnemonicParsing="false" text="Exame" />
+                                </items>
+                              </Menu>
+                              <MenuItem fx:id="menuitem_buscaragendamento" mnemonicParsing="false" onAction="#handlerBuscarAgendamento" text="Buscar" />
                           </items>
                         </Menu>
                   </items>

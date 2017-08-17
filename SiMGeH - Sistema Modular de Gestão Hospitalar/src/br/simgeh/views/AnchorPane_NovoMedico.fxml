@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="500.0" minWidth="900.0" prefHeight="663.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="br.simgeh.control.AnchorPane_NovoUsuarioController">
+   <children>
+      <Button fx:id="tfClean" layoutX="369.0" layoutY="561.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Limpar" />
+      <Button fx:id="tfSave" layoutX="443.0" layoutY="561.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="65.0" text="Salvar" />
+      <Label layoutX="307.0" layoutY="437.0" text="Bairro:" />
+      <Label layoutX="132.0" layoutY="434.0" text="Cidade:" />
+      <TextField fx:id="tfLogradouro" layoutX="472.0" layoutY="454.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="472.0" layoutY="437.0" text="Logradouro:" />
+      <Label layoutX="510.0" layoutY="331.0" text="Fone:" />
+      <TextField fx:id="tfNo" layoutX="701.0" layoutY="454.0" prefHeight="25.0" prefWidth="65.0" />
+      <TextField fx:id="tfFone" layoutX="508.0" layoutY="347.0" onKeyReleased="#tfFoneFixo_KeyReleased" prefHeight="25.0" prefWidth="148.0" />
+      <Label layoutX="314.0" layoutY="331.0" text="CPF:" />
+      <TextField fx:id="tfBairro" layoutX="306.0" layoutY="453.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="130.0" layoutY="229.0" text="Dados Pessoais">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="132.0" layoutY="92.0" text="Dados de Usuário">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfNome" layoutX="133.0" layoutY="287.0" prefHeight="25.0" prefWidth="198.0" />
+      <Label layoutX="132.0" layoutY="270.0" text="Nome:" />
+      <Label layoutX="368.0" layoutY="46.0" prefHeight="48.0" prefWidth="135.0" text="Novo Médico">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Separator layoutX="175.0" layoutY="184.0" prefHeight="0.0" prefWidth="548.0" />
+      <Label layoutX="137.0" layoutY="138.0" text="Login:" />
+      <TextField fx:id="tfLogin" layoutX="186.0" layoutY="135.0" prefHeight="25.0" prefWidth="160.0" />
+      <TextField fx:id="tfSenha" layoutX="422.0" layoutY="135.0" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="370.0" layoutY="138.0" text="Senha:" />
+      <TextField fx:id="tfCPF" layoutX="315.0" layoutY="347.0" onKeyReleased="#tfCPF_KeyReleased" prefHeight="25.0" prefWidth="160.0" />
+      <Label layoutX="701.0" layoutY="438.0" text="Número:" />
+      <ImageView fitHeight="85.0" fitWidth="180.0" layoutX="767.0" layoutY="519.0" opacity="0.61" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../eclipse_java_ee_workspace/SiMGeH%20-%20Sistema%20Modular%20de%20Gestão%20Hospitalar/src/br/simgeh/views/qms_v2_h_rgb.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="tfCidade" layoutX="132.0" layoutY="452.0" />
+      <Label layoutX="140.0" layoutY="199.0" text="Matrícula:" />
+      <TextField fx:id="tfMat" layoutX="197.0" layoutY="195.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label layoutX="374.0" layoutY="270.0" text="Sobrenome:" />
+      <TextField fx:id="tfSobrenome" layoutX="368.0" layoutY="287.0" prefHeight="25.0" prefWidth="305.0" />
+      <TextField fx:id="tfDataNacto" layoutX="132.0" layoutY="347.0" onKeyReleased="#tfDataNacto_KeyReleased" />
+      <Label layoutX="136.0" layoutY="327.0" text="Data de nascimento:" />
+      <Label layoutX="136.0" layoutY="383.0" text="CRMV:" />
+      <TextField layoutX="132.0" layoutY="400.0" />
+      <Label layoutX="309.0" layoutY="383.0" text="Especialidade:" />
+      <TextField layoutX="309.0" layoutY="400.0" prefHeight="25.0" prefWidth="222.0" />
+      <Label layoutX="423.0" layoutY="199.0" prefHeight="25.0" prefWidth="305.0" text="Login 'tal' ja existe! Por favor, escolha outro." />
+   </children>
+</AnchorPane>

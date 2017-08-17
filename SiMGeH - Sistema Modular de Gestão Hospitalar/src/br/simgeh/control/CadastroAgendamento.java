@@ -10,6 +10,7 @@ import br.simgeh.data.RepositorioAgendamento;
 import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.ProcuraAgendamentoInexistenteException;
 import br.simgeh.model.Agendamento;
+import br.simgeh.model.Animal;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -47,8 +48,8 @@ public class CadastroAgendamento {
 		this.repositorio.imprimiAgendamento();
 	}
 
-        public ArrayList<Agendamento> agendamentosPorProntuario(int prontuario_id){
-            return this.repositorio.agendamentosPorProntuario(prontuario_id);
+        public ArrayList<Agendamento> agendamentosPorProntuario(Animal animal){
+            return this.repositorio.agendamentosPorProntuario(animal);
         }
         
 	public Agendamento acharAgendamento(Agendamento a)
@@ -57,4 +58,8 @@ public class CadastroAgendamento {
 		Agendamento u = this.repositorio.procurar(a);
 		return u;
 	}
+        
+         public ArrayList<Agendamento> allAgendamentos(){
+             return repositorio.allAgendamentos();
+         }
 }

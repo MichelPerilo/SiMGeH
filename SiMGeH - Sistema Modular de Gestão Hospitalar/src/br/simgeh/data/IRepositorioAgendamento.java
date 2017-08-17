@@ -8,6 +8,7 @@ package br.simgeh.data;
 import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.ProcuraAgendamentoInexistenteException;
 import br.simgeh.model.Agendamento;
+import br.simgeh.model.Animal;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -17,10 +18,11 @@ import java.util.ArrayList;
  */
 public interface IRepositorioAgendamento {
     public void  imprimiAgendamento() throws IOException;
-     public ArrayList<Agendamento> agendamentosPorProntuario(int prontuario_id);
+     public ArrayList<Agendamento> agendamentosPorProntuario(Animal animal);
      public void remover(Agendamento a) throws IOException, ProcuraAgendamentoInexistenteException;
      public Agendamento procurar(Agendamento a) throws ProcuraAgendamentoInexistenteException;
      public void cadastra(Agendamento a) throws IOException,
 			CadastroAgendamentoExistenteException;
+      public ArrayList<Agendamento> allAgendamentos();
     
 }
