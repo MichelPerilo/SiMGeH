@@ -5,9 +5,6 @@
  */
 package br.simgeh.control;
 
-import br.simgeh.exeception.CadastroAgendamentoExistenteException;
-import br.simgeh.exeception.CadastroServicoExistenteException;
-import br.simgeh.model.Animal;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -21,7 +18,6 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
@@ -38,10 +34,6 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
 
     @FXML
     private TextField input;
-    @FXML
-    private DatePicker datepicker_data;
-    @FXML
-    private ChoiceBox txtfld_hora;
     
     
     private Stage stage;
@@ -64,28 +56,16 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
         fachada.allAnimals();
         TextFields.bindAutoCompletion(input, fachada.allAnimals());
-         
+        /*String[] servicos = {"Consullta", "Cirurgia", "Exame"};
+        ObservableList<String> items =FXCollections.observableArrayList (servicos);
+        chbox_servico.setItems(items);
+        */
+          
     }
     
-   public void handlerAgendarConsulta() throws IOException, CadastroAgendamentoExistenteException, CadastroServicoExistenteException{
-        IGerenciadorAgendamento fachada = new ControladorAgendamento().getInstance();
-        input.getText();
-        String data =  datepicker_data.getValue().toString();
-        int prontuario_id = Integer.parseInt(buscarAnimal(input.getText()).getId());
-        String hora = "8:00";
-        fachada.cadatrarAgendamento(prontuario_id ,  data , hora , 1);
-   }
+   
 
-   public Animal buscarAnimal(String input){
-       Animal resultado = null;
-        IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
-         for(int i= 0; i< fachada.allAnimals().size(); i++){
-             if (input.equals(fachada.allAnimals().get(i).toString())){
-                 resultado =  fachada.allAnimals().get(i);
-             }
-         }
-         return resultado;
-   }
+    
     
     /**
      * @return the stage

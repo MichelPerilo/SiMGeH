@@ -121,7 +121,14 @@ public class AnchorPane_FarmacoController implements Initializable {
           textFieldTipo.setText(p.getTipo());
           textFieldDescricao.setText(p.getDescricao());
        
-
+//          textFieldID.setEditable(false);
+//          textFieldNome.setEditable(false);
+//          textFieldQTD.setEditable(false);
+//          textFieldTipo.setEditable(false);
+//          textFieldDescricao.setEditable(false);
+       
+//          textFieldBusca.setText("");
+          
 
 	} catch (ProcuraProdutoInexistenteExeception ppi) {
 	    Alert alert = new Alert(AlertType.WARNING);
@@ -264,42 +271,6 @@ public class AnchorPane_FarmacoController implements Initializable {
         
         
     }  
-    
-     @FXML
-    public void clicarMouseItemListViewRequisicao() throws IOException {
-        RequisicaoProduto r = tableViewRequisicao.getSelectionModel().getSelectedItem();
-        showAnchorPane_SelectIntemRequisicao(r);
-        
-    }
-    
-    public void showAnchorPane_SelectIntemRequisicao(RequisicaoProduto r) throws IOException{
-         
-        
-        FXMLLoader loader = new FXMLLoader();        
-        loader.setLocation(SelectRequisicaoController.class.getResource("../views/SelectRequisicao.fxml"));
-        AnchorPane page = (AnchorPane) loader.load();
-                 
-        Stage requisicaoSelect = new Stage();
-        requisicaoSelect.setTitle("Descrição de Requisição");
-        Scene scene = new Scene(page);
-        requisicaoSelect.setScene(scene);
-        requisicaoSelect.setResizable(false);
-        
-        SelectRequisicaoController controller = loader.getController();
-        
-        controller.setTADescricao(r.getDescricao());
-        controller.setTFid(Integer.toString(r.getID()));
-        controller.setTFQTDSolicitada(Integer.toString(r.getQtd()));
-        controller.setTFSetor(r.getSetor());
-        
-        
-       
-        controller.setStage(requisicaoSelect);       
-        requisicaoSelect.showAndWait();
-        
-        
-        
-    }
 
 }
        

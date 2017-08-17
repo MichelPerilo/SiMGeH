@@ -49,7 +49,7 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     @FXML
     private ComboBox<String> pelageCbbx;
     @FXML
-	private ComboBox<String> porteCbbx;
+    private ComboBox<String> porteCbbx;
     @FXML 
     private TextField dtaAtualTxtField;
     @FXML
@@ -81,13 +81,13 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     private ObservableList<String> listPorte = FXCollections.observableArrayList("Pequeno Porte", "Médio Porte", "Grande Porte");
     private Calendar dtaAtual = Calendar.getInstance();
     SimpleDateFormat s = new SimpleDateFormat("dd/MM/yyyy");
-	String a = s.format(dtaAtual.getTime());
-	IGerenciadorAnimal_A facade;
+    String a = s.format(dtaAtual.getTime());
+    IGerenciadorAnimal_A facade;
     
 	
-	public AnchorPane_NovoPacienteController() throws IOException {
-		 facade = ControladorAnimal_A.getInstance();
-	}
+    public AnchorPane_NovoPacienteController() throws IOException {
+	facade = ControladorAnimal_A.getInstance();
+    }
     
     Integer i=1;
     
@@ -129,7 +129,7 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     	tff.formatter();
     }
     
-  //máscara do textField Fone Fixo.
+    //máscara do textField Fone Fixo.
     @FXML
     private void tfFoneFixo_KeyReleased() {
     	TextFieldFormatter tff = new TextFieldFormatter();
@@ -138,12 +138,12 @@ public class AnchorPane_NovoPacienteController implements Initializable {
     	tff.setTf(txtfld_foneFixo);
     	tff.formatter();
     }
-    
+ 
     //máscara do textField Telefone Celular.
     @FXML
     private void tfCelular_KeyReleased() {
     	TextFieldFormatter tff = new TextFieldFormatter();
-    	tff.setMask("(##)#####-####");
+    	tff.setMask("##/##/####");
     	tff.setCaracteresValidos("0123456789");
     	tff.setTf(txtfld_Celular);
     	tff.formatter();

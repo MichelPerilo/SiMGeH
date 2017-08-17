@@ -18,7 +18,6 @@ import java.util.Date;
  */
 public class ControladorUsuario implements IGerenciadorUsuario {
      private  CadastroUsuario usuario = new CadastroUsuario();
-   
      
      private static IGerenciadorUsuario instance;
 
@@ -39,6 +38,16 @@ public class ControladorUsuario implements IGerenciadorUsuario {
 
     public ArrayList<Usuario> allUsers(){
         return this.usuario.allUsers();
+    }
+    
+    public Usuario buscarUsuario(Usuario u) {
+        ArrayList<Usuario> listUsers = this.allUsers();
+        
+        for(Usuario user: listUsers) 
+            if(user.equals(user))
+                return user;
+        
+        return null;
     }
     
 }

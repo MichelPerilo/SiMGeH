@@ -17,7 +17,12 @@ public abstract class Usuario extends Pessoa {
     private String login;
     private String senha;
     private Boolean admin;
-    
+    private String pNome;
+    private String uNome;
+    private String CPF;
+    private Date dta_nascto;
+    private int tel_fixo;
+    private int tel_celular;
     
     public Usuario(int MATRICULA, String login, String senha, Boolean admin, String pNome, String uNome, String CPF, Date dta_nascto, int tel_fixo, int tel_celular) {
         super(pNome, uNome, CPF, dta_nascto, tel_fixo, tel_celular);
@@ -57,6 +62,12 @@ public abstract class Usuario extends Pessoa {
 
     public void setAdmin(Boolean admin) {
         this.admin = admin;
+    }
+    
+    public boolean equals(Usuario u) {
+        if(this.getLogin().equals(u.getLogin()))
+            return true;
+        return false;
     }
  
 }

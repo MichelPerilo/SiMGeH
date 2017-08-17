@@ -29,14 +29,12 @@ public class CadastroUsuario {
 
 	}
 
-	public void cadatrar(Usuario u) throws IOException,
-			CadastroUsuarioExistenteException {
+	public void cadatrar(Usuario u) throws IOException, CadastroUsuarioExistenteException {
 		this.repositorio.cadastra(u);
 
 	}
 
-	public void descadatrar(String login) throws IOException,
-			ProcuraUsuarioInexistenteException {
+	public void descadatrar(String login) throws IOException, ProcuraUsuarioInexistenteException {
 
 		this.repositorio.remover(login);
 
@@ -51,8 +49,7 @@ public class CadastroUsuario {
             return this.repositorio.allUsers();
         }
         
-	public Usuario acharUsuario(String login)
-			throws ProcuraUsuarioInexistenteException {
+	public Usuario acharUsuario(String login)throws ProcuraUsuarioInexistenteException {
 
 		Usuario u = this.repositorio.procurar(login);
 		return u;

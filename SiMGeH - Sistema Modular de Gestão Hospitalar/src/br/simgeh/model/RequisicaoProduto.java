@@ -15,7 +15,6 @@ public class RequisicaoProduto{
     private int qtd;
     static int IDcont = 0;
     private int ID;
-    private String descricao;
     private String status;              /*
                                         1 - Não avaliada 
                                         3 - Rejeitada 
@@ -24,28 +23,18 @@ public class RequisicaoProduto{
     private String justificativa;
 
     
-   
+            
 
-    public RequisicaoProduto(String setor,String descricao, String justificativa, int qtd) {
+    public RequisicaoProduto(String setor, String status, String justificativa, int qtd) {
         setSetor(setor);
         setID();
-        setDescricao(descricao);
+        setStatus(status);
         setSetor(setor);
         setQtd(qtd);
         
         
     }
 
-    
-    
-    public String getDescricao() {
-        return descricao;
-    }
-
-    public void setDescricao(String descricao) {
-        this.descricao = descricao;
-    }
-    
     
     public int getQtd() {
         return qtd;
@@ -95,8 +84,6 @@ public class RequisicaoProduto{
     public String toString() {
         return "RequisicaoProduto" + "\n\nsetor: " + setor + "   ID: " + ID;
     }
-    
-    
     
     
 }

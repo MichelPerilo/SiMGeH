@@ -58,9 +58,9 @@ public class ControladorFarmaco implements IGerenciadorFarmaco{
     }
     
     
-    public void cadatrarRequisicao(String setor, String descricao, String justificativa,int qtd)throws IOException{
+    public void cadatrarRequisicao(String setor, String status, String justificativa,int qtd)throws IOException{
         
-        RequisicaoProduto rf = new RequisicaoProduto(setor,descricao,justificativa,qtd);    
+        RequisicaoProduto rf = new RequisicaoProduto(setor,status,justificativa,qtd);    
         this.requisicaoF.cadatrar(rf);
         
     }
