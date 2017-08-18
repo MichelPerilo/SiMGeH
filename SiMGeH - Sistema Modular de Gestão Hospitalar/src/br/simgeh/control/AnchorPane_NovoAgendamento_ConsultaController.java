@@ -7,16 +7,17 @@ package br.simgeh.control;
 
 import br.simgeh.exeception.CadastroAgendamentoExistenteException;
 import br.simgeh.exeception.CadastroServicoExistenteException;
+import br.simgeh.model.Agendamento;
 import br.simgeh.model.Animal;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -45,6 +46,12 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
     public ChoiceBox txtfld_hora;
     @FXML
     public Button btn_agendar;
+    @FXML
+    public Button btn_salvar;
+    @FXML
+    private ChoiceBox choicebox_medico;
+    
+    private Agendamento agendamento;
     
     
     private Stage stage;
@@ -70,6 +77,9 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
         String[] horas = {"8:00", "8:20", "8:40", "9:00", "9:20", "9:40", "10:00", "14:00", "14:20", "14:40","15:00"};
          ObservableList<String> items = FXCollections.observableArrayList (horas);
         getTxtfld_hora().setItems(items);
+        String[] medico = {"Clínica/ Dr. José da Silva", "Oftalmologia/ Dra. Suzana Oliveira", "Ortopedia/ Dr. Carlos Bezerra", "Ortopedia/ Dra. Carla Lira", "Clínica/ Dr. Marcos Silva"};
+         ObservableList<String> medicos = FXCollections.observableArrayList (medico);
+        getChoicebox_medico().setItems(medicos);
          
     }
     
@@ -82,7 +92,15 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
         int tipo = 1;
         fachada.cadatrarAgendamento(animal ,  data , hora , tipo);
    }
+   
+   public void handlerSalvarConsulta() throws IOException{
+       
+       agendamento.setData(getDatepicker_data().getValue().toString());
+       agendamento.setHora(getTxtfld_hora().getValue().toString());
+   
 
+   }
+   
    public Animal buscarAnimal(String input){
        Animal resultado = null;
         IGerenciadorAnimal_A fachada = ControladorAnimal_A.getInstance();
@@ -148,6 +166,34 @@ public class AnchorPane_NovoAgendamento_ConsultaController implements Initializa
      */
     public void setTxtfld_hora(ChoiceBox txtfld_hora) {
         this.txtfld_hora = txtfld_hora;
+    }
+
+    /**
+     * @return the agendamento
+     */
+    public Agendamento getAgendamento() {
+        return agendamento;
+    }
+
+    /**
+     * @param agendamento the agendamento to set
+     */
+    public void setAgendamento(Agendamento agendamento) {
+        this.agendamento = agendamento;
+    }
+
+    /**
+     * @return the choicebox_medico
+     */
+    public ChoiceBox getChoicebox_medico() {
+        return choicebox_medico;
+    }
+
+    /**
+     * @param choicebox_medico the choicebox_medico to set
+     */
+    public void setChoicebox_medico(ChoiceBox choicebox_medico) {
+        this.choicebox_medico = choicebox_medico;
     }
    
     
