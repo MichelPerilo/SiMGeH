@@ -7,6 +7,7 @@ package br.simgeh.data;
 
 import br.simgeh.db_conection.ConexaoMySQL;
 import br.simgeh.model.Medico;
+import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ import java.util.List;
  *
  * @author Bartô
  */
-public class RepositorioMedico implements IRepositorioMedico {
+public class RepositorioMedico implements IRepositorioMedico, Serializable {
     
     private Connection connection;  
     

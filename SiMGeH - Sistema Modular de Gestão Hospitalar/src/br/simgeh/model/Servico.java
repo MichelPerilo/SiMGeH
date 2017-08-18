@@ -5,11 +5,13 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Michel Perilo
  */
-public abstract class Servico {
+public abstract class Servico implements Serializable{
     private int protuario_id;
     private Medico medico; 
     

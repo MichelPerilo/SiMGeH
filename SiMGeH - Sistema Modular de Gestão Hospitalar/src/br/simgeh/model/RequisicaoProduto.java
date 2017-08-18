@@ -5,11 +5,13 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
+
 /**
  *
- * @author Michel Perilo
+ * @author Raylison Santos
  */
-public class RequisicaoProduto{
+public class RequisicaoProduto implements Serializable{
     
     private String setor;
     private int qtd;

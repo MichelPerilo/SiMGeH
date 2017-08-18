@@ -5,13 +5,14 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author BARTOLOMEU.DIAS
  */
-public class Medico extends Usuario {
+public class Medico extends Usuario implements Serializable {
     
     private String MATRICULA;
     private String Especialidade;

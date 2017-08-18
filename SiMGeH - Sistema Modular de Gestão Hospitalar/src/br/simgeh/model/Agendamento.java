@@ -5,6 +5,7 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 
@@ -12,7 +13,7 @@ import java.util.Date;
  *
  * @author Michel Perilo
  */
-public class Agendamento {
+public class Agendamento implements Serializable {
     private Animal animal;
     private String data;
     private String hora;

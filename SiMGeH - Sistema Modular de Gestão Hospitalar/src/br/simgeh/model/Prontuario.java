@@ -5,12 +5,14 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
+
 
 /**
  *
  * @author Michel Perilo
  */
-public class Prontuario {                                 
+public class Prontuario implements Serializable{                                 
     private int ID;
     private Animal animal;
     

@@ -5,13 +5,14 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
  *
  * @author Bartô
  */
-public class Animal {
+public class Animal implements Serializable{
     private String id;
     private String nome;
     private String sexo;

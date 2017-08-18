@@ -5,11 +5,13 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Bartô
  */
-public class Tutor {
+public class Tutor implements Serializable{
 
 	private String nome;
 	private String cpf;

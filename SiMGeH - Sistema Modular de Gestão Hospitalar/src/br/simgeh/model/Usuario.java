@@ -1,4 +1,5 @@
 package br.simgeh.model;
+import java.io.Serializable;
 import java.util.Date;
 
 /*
@@ -12,7 +13,7 @@ import java.util.Date;
  *
  * @author Bartô
  */
-public abstract class Usuario extends Pessoa {
+public abstract class Usuario extends Pessoa implements Serializable {
     private int MATRICULA;
     private String login;
     private String senha;

@@ -5,11 +5,13 @@
  */
 package br.simgeh.model;
 
+import java.io.Serializable;
+
 /**
  *
  * @author BARTOLOMEU.DIAS
  */
-public class Endereco {
+public class Endereco implements Serializable{
     private String cidade;
     private String bairro;
     private String logradouro;
