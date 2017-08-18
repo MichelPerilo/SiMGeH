@@ -18,6 +18,8 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -57,14 +59,11 @@ public class AnchorPane_BuscarAgendamentoController implements Initializable {
     
     public void handlerAtualizar(){
          IGerenciadorAgendamento fachada = new ControladorAgendamento().getInstance(); 
-         fachada.allAgendamentos();
-         ArrayList<Agendamento> consultas;
-         ArrayList<Agendamento> exames;
-         ArrayList<Agendamento> proc_cirurgico;
+         
          
       
          if(checkbox_consultas.isSelected()){
-             ObservableList<Agendamento> items = FXCollections.observableArrayList (  filtroServico_Consultas(fachada));
+             ObservableList<Agendamento> items = FXCollections.observableArrayList (filtroServico_Consultas(fachada));
             
              listview_listaagendamentos.setItems(items);
             
@@ -94,7 +93,11 @@ public class AnchorPane_BuscarAgendamentoController implements Initializable {
         controller.txtfld_hora.setValue(a.getHora());
         controller.input.setText(a.getAnimal().toString());
         controller.datepicker_data.setValue(date);
-        controller.btn_agendar.setText("Salvar");
+        controller.btn_agendar.setVisible(false);
+        controller.btn_salvar.setVisible(true);
+        controller.btn_salvar.setDisable(false);
+        controller.btn_agendar.setDisable(true);
+        controller.setAgendamento(a);
         
         novoAgendamentoStage.showAndWait();
     }
