@@ -213,16 +213,16 @@ public class AnchorPane_FarmacoController implements Initializable {
         tableColumnID.setCellValueFactory(new PropertyValueFactory<>("ID"));
         tableColumnSetor.setCellValueFactory(new PropertyValueFactory<>("setor"));
         
-        fachada.cadatrarRequisicao("Clinica", "Aberto", "paciente em caso de vida",5);
-        fachada.cadatrarRequisicao("teste", "teste", "teste", 3);
-        fachada.cadatrarRequisicao("teste2", "teste2", "teste3", 63);
-        fachada.cadatrarRequisicao("teste3", "teste3", "teste3", 3);
-        fachada.cadatrarRequisicao("teste4", "teste4", "teste4", 63);
-        fachada.cadatrarRequisicao("teste5", "teste5", "teste5", 63);
-        fachada.cadatrarRequisicao("teste6", "teste6", "teste6", 63);
-        fachada.cadatrarRequisicao("teste7", "teste7", "teste7", 63);
-        fachada.cadatrarRequisicao("teste8", "teste8", "teste8", 63);
-        fachada.cadatrarRequisicao("teste9", "teste9", "teste9", 63);
+//        fachada.cadatrarRequisicao("Clinica", "Aberto", "paciente em caso de vida",5);
+//        fachada.cadatrarRequisicao("teste", "teste", "teste", 3);
+//        fachada.cadatrarRequisicao("teste2", "teste2", "teste3", 63);
+//        fachada.cadatrarRequisicao("teste3", "teste3", "teste3", 3);
+//        fachada.cadatrarRequisicao("teste4", "teste4", "teste4", 63);
+//        fachada.cadatrarRequisicao("teste5", "teste5", "teste5", 63);
+//        fachada.cadatrarRequisicao("teste6", "teste6", "teste6", 63);
+//        fachada.cadatrarRequisicao("teste7", "teste7", "teste7", 63);
+//        fachada.cadatrarRequisicao("teste8", "teste8", "teste8", 63);
+//        fachada.cadatrarRequisicao("teste9", "teste9", "teste9", 63);
         
         observableListRequisicaoProduto = FXCollections.observableArrayList(fachada.exibiRequisicao());
         tableViewRequisicao.setItems(observableListRequisicaoProduto);

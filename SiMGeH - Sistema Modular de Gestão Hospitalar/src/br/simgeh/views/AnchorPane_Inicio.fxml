@@ -52,7 +52,7 @@
                   <Menu fx:id="menu_farmacia" mnemonicParsing="false" text="Farmácia" visible="false">
                     <items>
                       <MenuItem fx:id="menuitem_farmaco_painel" mnemonicParsing="false" onAction="#handlerFarmaco" text="Produtos" />
-                        <MenuItem mnemonicParsing="false" text="Requisições" />
+                        <MenuItem mnemonicParsing="false" onAction="#handlerFarmacoR" text="Requisições" />
                     </items>
                   </Menu>
                   <Menu fx:id="menu_laboratorio" mnemonicParsing="false" text="Laboratório">

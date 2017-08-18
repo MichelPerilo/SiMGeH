@@ -176,6 +176,12 @@ public class AnchorPane_InicioController implements Initializable {
         AnchorPane anchorpane_farmaco = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_Farmaco.fxml"));
        anchorpane_main.getChildren().setAll(anchorpane_farmaco);
     }
+    
+    @FXML
+    public void handlerFarmacoR() throws IOException{
+        AnchorPane anchorpane_farmacoR = (AnchorPane) FXMLLoader.load(getClass().getResource("../views/AnchorPane_FarmacoRequisicao.fxml"));
+        anchorpane_main.getChildren().setAll(anchorpane_farmacoR);
+    }
 
     @FXML
     public void handlerNovoUsuario() throws IOException{

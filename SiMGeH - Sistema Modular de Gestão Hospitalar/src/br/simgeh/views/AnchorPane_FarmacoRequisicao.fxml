@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.TextField?>
+
+
+<AnchorPane id="AnchorPane" maxHeight="690.0" maxWidth="1200.0" minHeight="690.0" minWidth="1200.0" prefHeight="690.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111" fx:controller="br.simgeh.control.AnchorPane_FarmacoRequisicaoController">
+   <children>
+      <Pane layoutY="-2.0" onMouseClicked="#clicarMouseItemListViewRequisicao" prefHeight="690.0" prefWidth="1200.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="-2.0">
+         <children>
+            <Separator layoutX="14.0" layoutY="127.0" prefWidth="1171.0" />
+            <Label layoutX="310.0" layoutY="62.0" prefHeight="22.0" prefWidth="77.0" text="BUSCAR">
+               <font>
+                  <Font name="David" size="18.0" />
+               </font>
+            </Label>
+            <TextField fx:id="tfBuscar" layoutX="408.0" layoutY="61.0" onDragDetected="#handlerLimparBusca" prefHeight="25.0" prefWidth="269.0" />
+            <Button fx:id="btOK" layoutX="696.0" layoutY="61.0" mnemonicParsing="false" onAction="#handlerBuscarProduto" text="ok" />
+            <Button fx:id="btLimpar" layoutX="742.0" layoutY="61.0" mnemonicParsing="false" onAction="#handlerLimparBusca" text="LIMPAR" />
+            <ScrollPane layoutX="102.0" layoutY="145.0" prefHeight="522.0" prefWidth="996.0">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="tableviewRequisicao" onMouseClicked="#clicarMouseItemListViewRequisicao" prefHeight="522.0" prefWidth="996.0" AnchorPane.bottomAnchor="-322.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="-796.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="tableviewColunmID" prefWidth="75.0" text="ID" />
+                            <TableColumn fx:id="tableviewColunmStatus" prefWidth="257.0" text="STATUS" />
+                              <TableColumn fx:id="tableviewColunmSetor" prefWidth="253.0" text="SETOR" />
+                              <TableColumn fx:id="tableviewColunmDescricao" prefWidth="410.0" text="DESCRIÇÃO" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </Pane>
+      <ImageView fitHeight="69.0" fitWidth="269.0" layoutX="925.0" layoutY="29.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@qms_v2_rgb.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>
